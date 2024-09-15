@@ -263,6 +263,11 @@ class Program
                 csvOutput.WriteField("Imagen");
                 csvOutput.WriteField("LinkWikidata");
                 csvOutput.WriteField("Velocidad");
+                csvOutput.WriteField("Nombre Cientifico");
+                csvOutput.WriteField("Wikidata");
+                csvOutput.WriteField("Numero Obras");
+                csvOutput.WriteField("Obras Prado");
+                csvOutput.WriteField("Siglo Más popular");
 
                 // Añadir dinámicamente las columnas adicionales
                 foreach (var columna in columnasAdicionales)
@@ -279,6 +284,7 @@ class Program
                     csvOutput.WriteField(animal.Imagen);
                     csvOutput.WriteField(animal.LinkWikidata);
                     csvOutput.WriteField(animal.Velocidad);
+                    csvOutput.WriteField(animal.NombreCientifico);
 
                     // Escribir los campos adicionales
                     foreach (var columna in columnasAdicionales)
