@@ -164,6 +164,7 @@ class Program
             //} 
             #endregion
 
+
             var columnasAdicionales = new HashSet<string>();
             var animalDescripcion = new Dictionary<string, string>();
 
@@ -218,7 +219,8 @@ class Program
                                                                                .ToList();
                                                                                // Si encontramos solo un animal posible, reasignamos la descripción a ese animal
                                                                                Console.WriteLine($"Reasignando descripción de {registro.Animal} a {possibleAnimals.First()}");
-                                                                               animalDescripcion.Add(possibleAnimals.First(), registro.Informacion) ;
+                                                                               if (!animalDescripcion.ContainsKey(possibleAnimals.First())){
+                                                                                   animalDescripcion.Add(possibleAnimals.First(), registro.Informacion); }
                                                                                
                                                                        }
                                                                }
@@ -264,7 +266,7 @@ class Program
                 csvOutput.WriteField("LinkWikidata");
                 csvOutput.WriteField("Velocidad");
                 csvOutput.WriteField("Nombre Cientifico");
-                csvOutput.WriteField("Wikidata");
+                csvOutput.WriteField("Familia");
                 csvOutput.WriteField("Numero Obras");
                 csvOutput.WriteField("Obras Prado");
                 csvOutput.WriteField("Siglo Más popular");

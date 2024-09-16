@@ -1,0 +1,131 @@
+﻿Animal;Campo;Información
+Ardilla;descripción;Águila es el nombre dado a las aves de presa, del orden de Accipitriformes, ​, ​ familia Accipitridae, subfamilia Buteoninae. Pertenecen a varios géneros, los cuales están sujetos a una reclasificación más adecuada puesto que los expertos no llegan a una opinión consensuada.
+Ardilla;imagen;https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Red_squirrel_on_tree_branch.jpg/330px-Red_squirrel_on_tree_branch.jpg
+Ardilla;velocidad;30 km/h
+Ardilla;link wikidata;https://www.wikidata.org/wiki/Q858243
+Ardilla;nombre común;Sciurus vulgaris
+Ardilla;interés;Alto
+Águila;descripción;Se conoce como ardilla a ciertas especies de roedores esciuromorfos de la familia Sciuridae, entre las que se encuentran: Las especies del género Ratufa, el único de la subfamilia Ratufinae. La ardilla pigmea neotropical, la única especie de la subfamilia Sciurillinae. Las especies de la subfamilia Sciurinae. 
+Águila;imagen;https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Kaiseradler_Aquila_heliaca_2_amk.jpg/330px-Kaiseradler_Aquila_heliaca_2_amk.jpg
+Águila;velocidad;
+Águila;link wikidata;https://www.wikidata.org/wiki/Q2092297
+Águila;nombre común;
+Águila;interés;Medio
+Asno;imagen;https://t2.ea.ltmcdn.com/es/posts/9/8/4/cuanto_vive_un_burro_26489_600.jpg
+Asno;velocidad;24 km/h
+Burro;link wikidata;https://www.wikidata.org/wiki/Q19707
+Asno;nombre común;Equus africanus asinus
+Burro;descripción;La palabra «asno» procede del término que designa a este animal en latín: asinus, y que también es la usada en su nombre científico para designar a la subespecie doméstica. Los términos, también latinos, que designan a su género y especie, Equus africanus, significan literalmente «caballo africano».
+Asno;interés;Alto
+Asno;interés;Bajo
+Búho;imagen;https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Uhu-muc.jpg/1024px-Uhu-muc.jpg
+Búho;velocidad;24 km/h
+Búho;link wikidata;https://www.wikidata.org/wiki/Q214293
+Búho;nombre común;Strigiformes
+Búho;descripción;Las rapaces nocturnas o estrigiformes ​ son un orden de aves compuesto por la familias Tytonidae, y la familia Strigidae​ que incluye búhos, mochuelos, tecolotes, autillos, cárabos, el ñacurutú y el chuncho, entre otras.
+Búho;interés;Bajo
+Búfalo;descripción;El bisonte americano, también denominado búfalo, ​ y —palabra en desuso— cíbolo, ​ es una especie de gran mamífero artiodáctilo de la familia de los bóvidos.​ 
+Búfalo;imagen;https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Bufala_de_agua.jpg/800px-Bufala_de_agua.jpg
+Búfalo;velocidad;57 km/h
+Búfalo;link wikidata;https://www.wikidata.org/wiki/Q40435
+Búfalo;nombre común;Bubalus bubalis
+Búfalo;interés;Alto
+Caballo;descripción;El caballo es un mamífero perisodáctilo domesticado de la familia de los équidos. Es un herbívoro de gran porte, con cuello largo y arqueado poblado por largas crines.​​A la hembra del caballo se le llama yegua y a las crías, si son machos, potros o potrillos, y si son hembras, potras o potrancas.
+Caballo;imagen;https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcU_Iepd78_KwTc40JweHS20hOF-gjdq6NdXq0Bx2J8o0hEsfz
+Caballo;velocidad;71 km/h (Maximum)
+Caballo;link wikidata;https://www.wikidata.org/wiki/Q726
+Caballo;nombre común;Equus ferus caballus
+Caballo;interés;Medio
+Caracol;descripción;Los caracoles son moluscos gastrópodos que se encuentran tanto en ambientes terrestres como acuáticos. Son conocidos por su concha en espiral y su movimiento lento debido a la secreción de moco que les ayuda a desplazarse.
+Caracol;imagen;https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Snail1web.jpg/330px-Snail1web.jpg
+Caracol;velocidad;0.03 km/h
+Caracol;link wikidata;https://www.wikidata.org/wiki/Q927080
+Caracol;nombre común;Helix aspersus 
+Caracol;interés;Bajo
+Camaleón;descripción;Los camaleones son una familia de pequeños saurópsidos escamosos. Existen cerca de 161 especies de camaleones, la mayor parte de ellas en África, al sur del Sáhara. En América se llama a menudo camaleones a lagartos de la familia de los anoles, que no guardan ningún parentesco especial con los verdaderos camaleones. 
+Camaleón;imagen;https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Chameleon_%2816139192778%29.jpg/330px-Chameleon_%2816139192778%29.jpg
+Camaleón;velocidad;100 km/h (Maximum)
+Camaleón;link wikidata;https://www.wikidata.org/wiki/Q37686
+Camaleón;nombre común;Chamaeleonidae
+Camaleón;interés;Medio
+Conejo;descripción;El conejo común o conejo europeo es una especie de mamífero lagomorfo de la familia Leporidae, y el único miembro actual del género Oryctolagus. Mide hasta 50 cm y su masa puede ser hasta 2.5 kg. Ha sido introducido en varios continentes y es la especie que se utiliza en la cocina y en la cunicultura.
+Conejo;imagen;https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Ikesbunny.jpg/330px-Ikesbunny.jpg
+Conejo;velocidad;40 km/h
+Conejo;link dbpedia;https://es.dbpedia.org/page/Categor%C3%ADa:Conejos
+Conejo;link wikidata;https://www.wikidata.org/wiki/Q9394
+Conejo;nombre común;Oryctolagus cuniculus
+Conejo;interés;Intermedio
+Ciervo;descripción;Los cérvidos son una familia de mamíferos artiodáctilos que incluye los ciervos o venados. Su tamaño es variable, siendo el alce el mayor, y el venadito o pudú del norte, el menor, con unos 8 o 10 kg.
+Ciervo;imagen;https://upload.wikimedia.org/wikipedia/commons/4/4b/Silz_cerf20-2.jpg
+Ciervo;velocidad;70 km/h (Maximum)
+Ciervo;link wikidata;https://www.wikidata.org/wiki/Q37548859
+Ciervo;nombre común;Cervus elaphus
+Corzo;descripción;Es un animal más ramoneador que de pastos, aun cuando se adapta fácilmente a esta dieta donde falta la masa arbustiva. En estado adulto el corzo tiene una altura en la cruz de unos setenta y cinco centímetros como máximo y un peso de entre veinte y treinta kilos.
+Corzo;imagen;https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Capreolus_%28js%2911.jpg/330px-Capreolus_%28js%2911.jpg
+Corzo;velocidad;40 km/h
+Corzo;link wikidata;https://www.wikidata.org/wiki/Q122069
+Corzo;nombre común;Capreolus capreolus
+Corzo;interés;Altoo
+Gamo;descripción;El gamo común o europeo es una especie de cérvido nativa de la región mediterránea. Se diferencia del otro gran cérvido europeo, el ciervo común, en su menor tamaño, sus astas palmeadas y su manto de pelo pardo-rojizo salpicado de motas blancas en primavera y verano. 
+Gamo;imagen;https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Rapperswil_-_Damhirsch_lMG_0363.JPG/375px-Rapperswil_-_Damhirsch_lMG_0363.JPG
+Gamo;velocidad;48 km/h
+Gamo;link wikidata;https://www.wikidata.org/wiki/Q159857
+Gamo;nombre común;Dama dama
+Gato;descripción;Los láridos son una familia de aves del orden Charadriiformes conocidas coloquialmente como gaviotas o pavanas. Están estrechamente relacionadas con los charranes de la familia Sternidae, y más lejanamente con las aves zancudas. La mayoría de las gaviotas pertenece al género Larus.
+Gato;imagen;https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Tiger_Tim_%28cropped%29.jpg/330px-Tiger_Tim_%28cropped%29.jpg
+Gato;velocidad;48 km/h (Maximum)
+Gato;link dbpedia;https://es.dbpedia.org/page/Categor%C3%ADa:Gatos
+Gato;link wikidata;https://www.wikidata.org/wiki/Q146
+Gato;nombre común;Felis silvestris catus
+Gaviota;descripción;El gato doméstico​​ llamado más comúnmente gato, y de forma coloquial minino, ​ michino, ​ y algunos nombres más, es un mamífero carnívoro de la familia Felidae. El nombre actual en muchas lenguas proviene del latín vulgar catus.
+Gaviota;imagen;https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Black-headed_Gull_-_St_James%27s_Park%2C_London_-_Nov_2006.jpg/330px-Black-headed_Gull_-_St_James%27s_Park%2C_London_-_Nov_2006.jpg
+Gaviota;velocidad;
+Gaviota;link wikidata;https://www.wikidata.org/wiki/Q2699803
+Gaviota;nombre común;Larinae 
+Guacamayo;descripción;Ara es un género de aves psitaciformes de la familia Psittacidae, comúnmente denominadas Guacamayos, Guacamayas, Lapas o guaras. 
+Guacamayo;imagen;https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Eurasian_wolf_2.jpg/330px-Eurasian_wolf_2.jpg
+Guacamayo;velocidad;
+Guacamayo;link wikidata;https://www.wikidata.org/wiki/Q213984
+Guacamayo;nombre común;Ara 
+Lobo;descripción;El lobo es una especie de mamífero placentario del orden de los carnívoros. El naturalista Carlos Linneo, en la décima edición de su obra Systema naturæ, publicada en 1758, clasificó al perro doméstico como especie distinta.
+Lobo;imagen;https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Eurasian_wolf_2.jpg/330px-Eurasian_wolf_2.jpg
+Lobo;velocidad;60 km/h (Maximum)
+Lobo;link wikidata;Q18498
+Lobo;nombre común;Canis lupus
+Lagartija;descripción;"Lagartija es un término usado en varios países como nombre común para denominar a algunas o todas las especies de ciertos géneros de las familias Lacertidae, Gekkonidae y Phrynosomatidae. En España, específicamente en las provincias de Burgos, Cuenca y Palencia, ""ligaterna"" ."
+Lagartija;imagen;https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Brown_Anole_Lizard_ARPT-LZ-BA-1.jpg/330px-Brown_Anole_Lizard_ARPT-LZ-BA-1.jpg
+Lagartija;velocidad;24 km/h
+Lagartija;link wikidata;https://www.wikidata.org/wiki/Q15629245
+Lagartija;nombre común;Lacertidae
+Nutria;descripción;Los lutrinos, conocidos comúnmente como nutrias, son una subfamilia de mamíferos placentarios carnívoros de la familia Mustelidae. Actualmente existen trece especies de nutrias repartidas en siete géneros, ​ con una distribución de la población prácticamente mundial.
+Nutria;imagen;htttps://upload.wikimedia.org/wikipedia/commons/thumb/8/82/LutraCanadensis_fullres.jpg/330px-LutraCanadensis_fullres.jpg
+Nutria;velocidad;20 km/h
+Nutria;velocidad;12 km/h
+Nutria;link wikidata;https://www.wikidata.org/wiki/Q200184
+Nutria;nombre común;Lutrinae
+Perro;descripción;"El perro, ​​​ llamado perro doméstico o can, ​ y en algunos lugares coloquialmente llamado chucho, ​ tuso, ​ choco, ​ entre otros; es un mamífero carnívoro de la familia de los cánidos, que constituye una especie del género Canis.​​"
+Perro;imagen;https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Poligraf_Poligrafovich.JPG/330px-Poligraf_Poligrafovich.JPG
+Perro;velocidad;37,28 millas/h
+Perro;link wikidata;Q20717272
+Perro;nombre común;Canis familiaris
+Perdiz;descripción;"Las perdices son aves no migratorias de la familia Phasianidae nativas de Europa, Asia, África y Medio Oriente. Por extensión, en algunos lugares se llama ""perdiz"" a las especies americanas de la familia Odontophoridae, y a algunas especies de la familia Tinamidae. "
+Perdiz;imagen;https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Perdix_perdix_%28Marek_Szczepanek%29.jpg/330px-Perdix_perdix_%28Marek_Szczepanek%29.jpg
+Perdiz;velocidad;
+Perdiz;link wikidata;https://www.wikidata.org/wiki/Q732775
+Perdiz;nombre común;Partridge 
+Pavo;descripción;El pavo doméstico es un ave de corral de gran tamaño utilizada en la alimentación humana, fundamentalmente por su carne, y en mucha menor medida por sus huevos. Fue introducido como ave doméstica en casi todo el mundo. La mayor demanda de carne de pavo ocurre para la fecha de Navidad. 
+Pavo;imagen;https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Ursus_arctos_Dessin_ours_brun_grand.jpg/323px-Ursus_arctos_Dessin_ours_brun_grand.jpg
+Pavo;velocidad;160 km/h
+Pavo;link wikidata;https://www.wikidata.org/wiki/Q848706
+Pavo;nombre común;Meleagris gallopavo domesticus
+Oso;descripción;Los osos o úrsidos son una familia de mamíferos omnívoros.​ Son animales de gran tamaño, generalmente omnívoros, ya que, a pesar de su temible dentadura, comen frutos, raíces e insectos
+Oso;imagen;https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Ursus_arctos_Dessin_ours_brun_grand.jpg/323px-Ursus_arctos_Dessin_ours_brun_grand.jpg
+Oso;velocidad;50 km/h
+Oso;link wikidata;https://www.wikidata.org/wiki/Q11788
+Oso;nombre común;Ursidae
+Rana;descripción;"Rana es un género de anfibios anuros de la familia Ranidae que habitan en Eurasia templada hasta Indochina.​ Las especies de este género se caracterizan por sus cinturas delgadas y la piel rugosa; muchas poseen finas estrías que recorren la espalda, aunque sin las verrugas típicas de los sapos. "
+Rana;imagen;https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Rana_aurora_Fern_Canyon.jpg/330px-Rana_aurora_Fern_Canyon.jpg
+Rana;velocidad;
+Rana;link wikidata;https://www.wikidata.org/wiki/Q11788
+Rana;nombre común;Rana
+Rana;interés ;https://www.wikidata.org/wiki/Q11788

@@ -1,0 +1,45 @@
+Para sacar la familia del animal
+
+
+SELECT DISTINCT  ?familia
+WHERE
+{
+ 
+  wd:Q726 wdt:P279 ?familia.
+  ?familia wdt:P31 wd:Q16521.//Veo wue es una catagorizacion taxiomática
+  ?familia wdt:P105 wd:Q35409 // Veo que esa categorizacion es una familia
+  
+  SERVICE wikibase:label { #BabelRainbow
+    bd:serviceParam wikibase:language "[AUTO_LANGUAGE],mul,fr,ar,be,bg,bn,ca,cs,da,de,el,en,es,et,fa,fi,he,hi,hu,hy,id,it,ja,jv,ko,nb,nl,eo,pa,pl,pt,ro,ru,sh,sk,sr,sv,sw,te,th,tr,uk,yue,vec,vi,zh"
+  }
+}
+LIMIT 1
+
+
+FAMILIA Y TODOS SUS DATOS EN ESPAÑOL
+
+SELECT DISTINCT  ?familia ?propertyLabel ?valueLabel
+WHERE
+{
+ 
+  wd:Q726 wdt:P279 ?familia.
+  ?familia wdt:P31 wd:Q16521.
+  ?familia wdt:P105 wd:Q35409.
+  ?familia ?property ?value.
+  FILTER (LANG(?value)= "[AUTO_LANGUAGE]")
+  SERVICE wikibase:label { #BabelRainbow
+    bd:serviceParam wikibase:language "[AUTO_LANGUAGE],mul,fr,ar,be,bg,bn,ca,cs,da,de,el,en,es,et,fa,fi,he,hi,hu,hy,id,it,ja,jv,ko,nb,nl,eo,pa,pl,pt,ro,ru,sh,sk,sr,sv,sw,te,th,tr,uk,yue,vec,vi,zh"
+  }
+}
+DATA - PETICIÓN AL PRADO CON PAGINADOR (OBRAS QUE TIENEN ARMAS)
+
+var options = new RestClientOptions("https://www.museodelprado.es")
+{
+  MaxTimeout = -1,
+};
+var client = new RestClient(options);
+var request = new RestRequest("/coleccion/obras-de-arte?ecidoc:p65_E36_p138_represents_object@@@pm:objectNode=http://museodelprado.es/items/object_1&rdf=null&pagina=3", Method.Get);
+request.AddHeader("Accept", "application/rdf+xml");
+request.AddHeader("Cookie", ".AspNetCore.Session=CfDJ8K%2F0GpENGoxPqVqfgLb9tP6vwZTk6VqlFWdHuP4xo8dN0DhxBWDcu1eEPzsDuJjFUW5%2F4rmM%2Bnsy3TL7SSwPpBHYGt%2FrI6cGdLO5m368C08WXRSVE%2BBequtzVvtpPEP0Wr1tBptkemhKAymF5LkKP1hyqvgD2V98ydewG9nr0Ikk; IdiomaActual=es; SesionUsuarioActiva=2024%2F09%2F17%2010%3A57%3A30");
+RestResponse response = await client.ExecuteAsync(request);
+Console.WriteLine(response.Content);
