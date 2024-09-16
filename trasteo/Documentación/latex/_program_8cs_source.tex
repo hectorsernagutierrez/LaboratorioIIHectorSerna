@@ -1,0 +1,406 @@
+\doxysection{C\+:/\+Users/usuario/source/repos/trasteo/trasteo/\+Program.cs}
+\hypertarget{_program_8cs_source}{}\label{_program_8cs_source}\mbox{\hyperlink{_program_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00001}00001\ \textcolor{keyword}{using\ }CsvHelper;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }CsvHelper.Configuration;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }Microsoft.Win32;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }System.Formats.Asn1;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }System.Globalization;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }System.IO;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00009}00009\ \textcolor{keyword}{using\ }System.Linq;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00010}00010\ \textcolor{keyword}{using\ }System.Text;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00011}00011\ \textcolor{keyword}{using\ }System.Text.RegularExpressions;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00012}00012\ \textcolor{keyword}{using\ }System.Xml.Serialization;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00013}00013\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespacetrasteo}{trasteo}};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00016}\mbox{\hyperlink{class_registro_animal}{00016}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_registro_animal}{RegistroAnimal}}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00017}00017\ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00018}\mbox{\hyperlink{class_registro_animal_aa983b61fc24dc46d0286f509cf47e0da}{00018}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}?\ \mbox{\hyperlink{class_registro_animal_aa983b61fc24dc46d0286f509cf47e0da}{Animal}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00019}\mbox{\hyperlink{class_registro_animal_a17accea9fadc81cf5b0c71988bc61ce5}{00019}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_registro_animal_a17accea9fadc81cf5b0c71988bc61ce5}{Campo}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00020}\mbox{\hyperlink{class_registro_animal_a049357fe61e2b8cd3783b17851c901d3}{00020}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}?\ \mbox{\hyperlink{class_registro_animal_a049357fe61e2b8cd3783b17851c901d3}{Informacion}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00021}00021\ \ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00022}\mbox{\hyperlink{class_registro_animal_a975bdbff2f8667e49b3d3d30b6cfa5ec}{00022}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}?\ \mbox{\hyperlink{class_registro_animal_a975bdbff2f8667e49b3d3d30b6cfa5ec}{Descripcion}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00023}\mbox{\hyperlink{class_registro_animal_ab307151bdf406ab88c61f331d71c7238}{00023}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}?\ \mbox{\hyperlink{class_registro_animal_ab307151bdf406ab88c61f331d71c7238}{Velocidad}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00024}\mbox{\hyperlink{class_registro_animal_a521d4346616eed60362ab951e823a60b}{00024}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}?\ \mbox{\hyperlink{class_registro_animal_a521d4346616eed60362ab951e823a60b}{Imagen}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00025}\mbox{\hyperlink{class_registro_animal_afe2a501a69ee8c4ad75ec981cbf1fd40}{00025}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}?\ \mbox{\hyperlink{class_registro_animal_afe2a501a69ee8c4ad75ec981cbf1fd40}{NombreCientifico}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00026}\mbox{\hyperlink{class_registro_animal_a2e557c037d91f06fb65250c64f2d7944}{00026}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}?\ \mbox{\hyperlink{class_registro_animal_a2e557c037d91f06fb65250c64f2d7944}{LinkWikidata}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00027}\mbox{\hyperlink{class_registro_animal_a03f8e9e6215d8516f0bf9b6d8ab4e0b7}{00027}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_registro_animal_a03f8e9e6215d8516f0bf9b6d8ab4e0b7}{Familia}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00028}\mbox{\hyperlink{class_registro_animal_a52b265a3684a2b19deb8eccc23110fa1}{00028}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}[]\ \mbox{\hyperlink{class_registro_animal_a52b265a3684a2b19deb8eccc23110fa1}{ObrasPrado}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00029}\mbox{\hyperlink{class_registro_animal_a26369bbabfff0d30a00dbe24f66fde9a}{00029}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{int}?\ \mbox{\hyperlink{class_registro_animal_a26369bbabfff0d30a00dbe24f66fde9a}{numObra}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00031}\mbox{\hyperlink{class_registro_animal_a55f6ee1de2f09b206b3ef2175563d56c}{00031}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keywordtype}{string}?\ \mbox{\hyperlink{class_registro_animal_a55f6ee1de2f09b206b3ef2175563d56c}{sigloPop}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00032}\mbox{\hyperlink{class_registro_animal_afa59dd88f82c99b8c77191cb3cb44e9e}{00032}}\ \ \ \ \ \textcolor{keyword}{public}\ Dictionary<string,\ string?>\ \mbox{\hyperlink{class_registro_animal_afa59dd88f82c99b8c77191cb3cb44e9e}{CamposAdicionales}}\ \{\ \textcolor{keyword}{get};\ \textcolor{keyword}{set};\ \}\ =\ \textcolor{keyword}{new}\ Dictionary<string,\ string?>();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00035}00035\ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00036}00036\ \textcolor{comment}{//\ Clase\ para\ organizar\ los\ datos}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00040}\mbox{\hyperlink{class_registro_animal_map}{00040}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_registro_animal_map}{RegistroAnimalMap}}\ :\ ClassMap<RegistroAnimal>}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00041}00041\ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00042}\mbox{\hyperlink{class_registro_animal_map_a0f6a4ef74746adc95838490f8a4091c6}{00042}}\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_registro_animal_map_a0f6a4ef74746adc95838490f8a4091c6}{RegistroAnimalMap}}()}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00043}00043\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ Map(m\ =>\ m.Animal).Name(\textcolor{stringliteral}{"{}Animal"{}}).Optional();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ Map(m\ =>\ m.Campo).Name(\textcolor{stringliteral}{"{}Campo"{}}).Optional();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00046}00046\ \ \ \ \ \ \ \ \ Map(m\ =>\ m.Informacion).Name(\textcolor{stringliteral}{"{}Información"{}}).Optional();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00048}00048\ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00050}\mbox{\hyperlink{class_program}{00050}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_program}{Program}}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00051}00051\ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00052}00052\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ Main()}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00053}00053\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Ruta\ del\ archivo\ CSV}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ pathAnimalData\ =\ \textcolor{stringliteral}{@"{}Archivos\(\backslash\)Lab\_data\_alumno.csv"{}};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ AnimalDataPath\ =\ Path.Combine(AppDomain.CurrentDomain.SetupInformation.ApplicationBase,\ pathAnimalData);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ outputFilePath\ =\ \textcolor{stringliteral}{@"{}Resultado\(\backslash\)ResultadoAnimalDataProcesado.csv"{}};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!File.Exists(AnimalDataPath))}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}El\ archivo\ no\ existe."{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Configuración\ del\ lector\ CSV}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00066}00066\ \ \ \ \ \ \ \ \ var\ config\ =\ \textcolor{keyword}{new}\ CsvConfiguration(CultureInfo.InvariantCulture)}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00067}00067\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ Delimiter\ =\ \textcolor{stringliteral}{"{};"{}},}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ Encoding\ =\ Encoding.UTF8}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00070}00070\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using}\ (var\ reader\ =\ \textcolor{keyword}{new}\ StreamReader(AnimalDataPath,\ Encoding.UTF8))}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using}\ (var\ csv\ =\ \textcolor{keyword}{new}\ CsvReader(reader,\ config))}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00074}00074\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ csv.Context.RegisterClassMap<\mbox{\hyperlink{class_registro_animal_map}{RegistroAnimalMap}}>();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ var\ recordsSinNormalizar\ =\ csv.GetRecords<\mbox{\hyperlink{class_registro_animal}{RegistroAnimal}}>().ToList();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ var\ records\ =\ \mbox{\hyperlink{class_program_a55789a418a83b5ad06c0e2130bd52649}{NormalizacionAnimales}}(recordsSinNormalizar);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Listas\ para\ detectar\ duplicados\ o\ inconsistencias}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ var\ urlList\ =\ \textcolor{keyword}{new}\ HashSet<string>();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ var\ fotosList\ =\ \textcolor{keyword}{new}\ Dictionary<string,\ string>();\ \ \textcolor{comment}{//\ Mapa\ de\ Animal\ -\/>\ Foto}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ var\ velocidadList\ =\ \textcolor{keyword}{new}\ Dictionary<string,\ string>();\ \textcolor{comment}{//\ Mapa\ de\ Animal\ -\/>\ Velocidad}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00085}00085\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#region\ AnalisisInicial}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//foreach\ (var\ record\ in\ records)}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\{}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ //\ Validar\ URLs}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ if\ (record.Campo\ ==\ "{}link\ wikidata"{}\ ||\ record.Campo\ ==\ "{}imagen"{})}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ if\ (!IsValidUrl(record.Informacion))}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$"{}URL\ no\ válida\ para\ \{record.Animal\}:\ \{record.Informacion\}"{});}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ //\ Aquí\ podrías\ intentar\ corregir\ la\ URL\ o\ marcarla\ como\ incorrecta}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ if\ (record.Campo\ ==\ "{}link\ wikidata"{}\ \&\&\ !urlList.Add(record.Informacion))}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$"{}Duplicado\ de\ URL\ para\ \{record.Animal\}:\ \{record.Informacion\}"{});}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ //\ Comprobar\ si\ hay\ imágenes\ duplicadas}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ if\ (record.Campo\ ==\ "{}imagen"{})}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ if\ (fotosList.ContainsKey(record.Animal))}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ if\ (fotosList[record.Animal]\ !=\ record.Informacion)}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$"{}Inconsistencia\ de\ fotos\ para\ \{record.Animal\}:\ diferentes\ imágenes\ registradas."{});}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ else}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ fotosList[record.Animal]\ =\ record.Informacion;}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ //\ Comprobar\ si\ hay\ diferentes\ velocidades\ para\ el\ mismo\ animal}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ if\ (record.Campo\ ==\ "{}velocidad"{})}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ if\ (velocidadList.ContainsKey(record.Animal))}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ if\ (velocidadList[record.Animal]\ !=\ record.Informacion)}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$"{}Inconsistencia\ de\ velocidades\ para\ \{record.Animal\}:\ diferentes\ velocidades\ registradas."{});}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ else}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ velocidadList[record.Animal]\ =\ record.Informacion;}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00138}00138\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ //\ Validar\ que\ las\ descripciones\ no\ contienen\ información\ incorrecta}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ if\ (record.Campo\ ==\ "{}descripción"{})}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00140}00140\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00141}00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ if\ (record.Informacion\ !=\ null\ \&\&\ !record.Informacion.Contains(record.Animal,\ StringComparison.OrdinalIgnoreCase))}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$"{}La\ descripción\ de\ \{record.Animal\}\ parece\ no\ corresponder\ al\ animal\ descrito."{});}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\}}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Código\ para\ analisis\ inicial}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//var\ numRegistros\ =\ records.Count();}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00150}00150\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//var\ animalesConMasInformacion\ =\ records.GroupBy(r\ =>\ r.Animal)}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .OrderByDescending(g\ =>\ g.Count())}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .Select(g\ =>\ new\ \{\ Animal\ =\ g.Key,\ Registros\ =\ g.ToList(),\ Conteo\ =\ g.Count()\ \})}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .ToList();}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00155}00155\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Console.WriteLine(\$"{}Número\ total\ de\ registros:\ \{numRegistros\}"{});}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00157}00157\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Console.WriteLine(\$"{}Animales\ con\ más\ información:"{});}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//foreach\ (var\ animal\ in\ animalesConMasInformacion)}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00160}00160\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\{}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ Console.WriteLine(\$"{}\{animal.Animal\}:\ \{animal.Conteo\}\ registros"{});}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ Console.WriteLine("{}Detalles\ de\ los\ registros:"{});}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00164}00164\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ foreach\ (var\ registro\ in\ animal.Registros)}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \{}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ Console.WriteLine(\$"{}\ \ Campo:\ \{registro.Campo\},\ Información:\ \{registro.Informacion\}"{});}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \}}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ Console.WriteLine();\ }}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\}\ }}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00170}00170\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \#endregion}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00171}00171\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00172}00172\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ var\ columnasAdicionales\ =\ \textcolor{keyword}{new}\ HashSet<string>();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ var\ animalDescripcion\ =\ \textcolor{keyword}{new}\ Dictionary<string,\ string>();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00175}00175\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ var\ animalesAgrupados\ =\ records.GroupBy(r\ =>\ r.Animal)}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .Select(g\ =>}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ animalInfo\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_registro_animal}{RegistroAnimal}}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Animal\ =\ g.Key}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00183}00183\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ registro\ \textcolor{keywordflow}{in}\ g)}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Usar\ un\ switch\ para\ aplicar\ diferentes\ validaciones\ según\ el\ campo}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (registro.Campo?.ToLower())}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ case\ \textcolor{stringliteral}{"{}link\ wikidata"{}}:}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (string.IsNullOrEmpty(animalInfo.LinkWikidata))}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Verificar\ si\ la\ URL\ es\ válida,\ si\ no\ lo\ es,\ corregirla}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (IsValidUrl(registro.Informacion,\ \textcolor{stringliteral}{@"{}\string^(http|https)://www\(\backslash\).wikidata\(\backslash\).org\(\backslash\)/wiki\(\backslash\)/.+\$"{}}))}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ animalInfo.LinkWikidata\ =\ registro.Informacion;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ else}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ animalInfo.LinkWikidata\ =\ GenerarWikiDataURL(registro.Informacion,\ registro.Animal);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}Corrigiendo\ URL\ de\ Wikidata\ para\ \{registro.Animal\}:\ \{animalInfo.LinkWikidata\}"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00206}00206\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}imagen"{}}:}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{string}.IsNullOrEmpty(animalInfo.Imagen)\ \&\&\ \ \mbox{\hyperlink{class_program_a93be828ac5129d9f77ed3022e5d8d380}{IsValidUrl}}(registro.Informacion,\ \textcolor{stringliteral}{@"{}\string^(http|https):\(\backslash\)/\(\backslash\)/.+\(\backslash\).(png|jpg|jpeg|gif|bmp|webp)\$"{}}))}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ animalInfo.Imagen\ =\ registro.Informacion;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00213}00213\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}descripción"{}}:}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00216}00216\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{string}.IsNullOrEmpty(animalInfo.Descripcion)\ \&\&\ registro.Informacion\ !=\ \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{comment}{//\ animalInfo.Descripcion\ =\ registro.Informacion;}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (registro.Informacion.Contains(registro.Animal,\ StringComparison.OrdinalIgnoreCase))}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00221}00221\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00222}00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Guardar\ la\ descripción\ correcta\ para\ el\ animal}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00223}00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!animalDescripcion.ContainsKey(registro.Animal))}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00224}00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ animalDescripcion[registro.Animal]\ =\ registro.Informacion;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00226}00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00227}00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00229}00229\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00230}00230\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00231}00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00232}00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00233}00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ possibleAnimals\ =\ records}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00234}00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .Where(r\ =>\ r.Animal\ !=\ \textcolor{keyword}{null}\ \&\&\ registro.Informacion.Contains(r.Animal,\ StringComparison.OrdinalIgnoreCase)\&\&\ !animalDescripcion.ContainsKey(r.Animal))}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00235}00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .Select(r\ =>\ r.Animal)}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00236}00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .ToList();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00237}00237\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00238}00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}Reasignando\ descripción\ de\ \{registro.Animal\}\ a\ \{possibleAnimals.First()\}"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00239}00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!animalDescripcion.ContainsKey(possibleAnimals.First()))}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ animalDescripcion.Add(possibleAnimals.First(),\ registro.Informacion);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00242}00242\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00243}00243\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00245}00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00246}00246\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00247}00247\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00248}00248\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}velocidad"{}}:}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00249}00249\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{string}.IsNullOrEmpty(animalInfo.Velocidad))}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00251}00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ animalInfo.Velocidad\ =\ registro.Informacion;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00252}00252\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00253}00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00254}00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \textcolor{stringliteral}{"{}nombre\ común"{}}:}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00255}00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{string}.IsNullOrEmpty(animalInfo.NombreCientifico))}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00256}00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00257}00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ animalInfo.NombreCientifico\ =\ registro.Informacion;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00258}00258\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00259}00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00260}00260\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00261}00261\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00262}00262\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00263}00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00264}00264\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Campos\ adicionales\ que\ no\ están\ mapeados\ explícitamente}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00265}00265\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!animalInfo.CamposAdicionales.ContainsKey(registro.Campo))}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00266}00266\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00267}00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ animalInfo.CamposAdicionales[registro.Campo]\ =\ registro.Informacion;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00268}00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ columnasAdicionales.Add(registro.Campo);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00269}00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00270}00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00271}00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00272}00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00273}00273\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00274}00274\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ animalInfo;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00275}00275\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}).ToList();\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00276}00276\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00277}00277\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}(\ var\ animal\ \textcolor{keywordflow}{in}\ animalesAgrupados\ )\ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00278}00278\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (animalDescripcion.ContainsKey(animal.Animal))}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00279}00279\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00280}00280\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Console.WriteLine(\$"{}Reasignando\ descripción\ a\ \{animal.Animal\}\ \{animalDescripcion[animal.Animal]\}"{});}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ animal.Descripcion\ =\ animalDescripcion[animal.Animal];}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00282}00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00283}00283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00284}00284\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00285}00285\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00286}00286\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using}\ (var\ writer\ =\ \textcolor{keyword}{new}\ StreamWriter(outputFilePath,\ \textcolor{keyword}{false},\ Encoding.UTF8))}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00287}00287\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{using}\ (var\ csvOutput\ =\ \textcolor{keyword}{new}\ CsvWriter(writer,\ CultureInfo.InvariantCulture))}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00288}00288\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00289}00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Escribir\ encabezado\ con\ los\ campos\ explícitos}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00290}00290\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ csvOutput.WriteField(\textcolor{stringliteral}{"{}Animal"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00291}00291\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ csvOutput.WriteField(\textcolor{stringliteral}{"{}Descripción"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00292}00292\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ csvOutput.WriteField(\textcolor{stringliteral}{"{}Imagen"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00293}00293\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ csvOutput.WriteField(\textcolor{stringliteral}{"{}LinkWikidata"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00294}00294\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ csvOutput.WriteField(\textcolor{stringliteral}{"{}Velocidad"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00295}00295\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ csvOutput.WriteField(\textcolor{stringliteral}{"{}Nombre\ Cientifico"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00296}00296\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ csvOutput.WriteField(\textcolor{stringliteral}{"{}Familia"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00297}00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ csvOutput.WriteField(\textcolor{stringliteral}{"{}FamiliaDescr"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00298}00298\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ csvOutput.WriteField(\textcolor{stringliteral}{"{}Numero\ Obras"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00299}00299\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ csvOutput.WriteField(\textcolor{stringliteral}{"{}Obras\ Prado"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00300}00300\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ csvOutput.WriteField(\textcolor{stringliteral}{"{}Siglo\ Más\ popular"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00301}00301\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00302}00302\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Añadir\ dinámicamente\ las\ columnas\ adicionales}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00303}00303\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ columna\ \textcolor{keywordflow}{in}\ columnasAdicionales)}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00304}00304\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00305}00305\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ csvOutput.WriteField(columna);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00306}00306\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00307}00307\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ csvOutput.NextRecord();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00308}00308\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00309}00309\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Escribir\ los\ datos}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00310}00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ animal\ \textcolor{keywordflow}{in}\ animalesAgrupados)}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00311}00311\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00312}00312\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ csvOutput.WriteField(animal.Animal);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00313}00313\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ csvOutput.WriteField(animal.Descripcion);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00314}00314\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ csvOutput.WriteField(animal.Imagen);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00315}00315\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ csvOutput.WriteField(animal.LinkWikidata);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00316}00316\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ csvOutput.WriteField(animal.Velocidad);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00317}00317\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ wikicientifico\ =\ \mbox{\hyperlink{classtrasteo_1_1_wikidata_helper}{WikidataHelper}}.\mbox{\hyperlink{classtrasteo_1_1_wikidata_helper_a40d93caab49ef93721e60e7cbf090185}{ObtenerNombreCientifico}}(animal.LinkWikidata);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00318}00318\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Notar\ que\ aqui\ con\ haber\ escrito\ el\ nombre\ cientifico\ solo\ desde\ wikidata\ servia\ pero\ de\ esta\ manera\ hcemos\ la\ comprobación\ pedida}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00319}00319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (wikicientifico.Equals(animal.NombreCientifico))}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00320}00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00321}00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}El\ nombre\ cientifico\ no\ coincide\ con\ el\ de\ wikidata\ \{wikicientifico\}\ vs\ \{animal.NombreCientifico\}"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00322}00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00323}00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ csvOutput.WriteField(wikicientifico);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00324}00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00325}00325\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00326}00326\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00327}00327\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00328}00328\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ csvOutput.WriteField(!\textcolor{keywordtype}{string}.IsNullOrEmpty(animal.NombreCientifico)\ ?\ animal.NombreCientifico\ :wikicientifico);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00329}00329\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00330}00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ (familia,\ familiaDescr)\ =\ \mbox{\hyperlink{classtrasteo_1_1_wikidata_helper}{WikidataHelper}}.\mbox{\hyperlink{classtrasteo_1_1_wikidata_helper_a09297f6b8f2b9dc4ccbd3e3caca76736}{ObtenerFamiliaYPropiedades}}(animal.LinkWikidata);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00331}00331\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ csvOutput.WriteField(familia);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00332}00332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ csvOutput.WriteField(familiaDescr);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00333}00333\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ (numeroObras,\ obrasNombres,\ sigloMasPopular)\ =\ \mbox{\hyperlink{class_prado_helper}{PradoHelper}}.\mbox{\hyperlink{class_prado_helper_a6be3c130718e6cf97e1c6a4b6e2cef36}{ObtenerInfoPrado}}(animal.Animal.ToLower());}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00334}00334\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ csvOutput.WriteField(numeroObras);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00335}00335\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ csvOutput.WriteField(obrasNombres);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00336}00336\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ csvOutput.WriteField(sigloMasPopular);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00337}00337\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ columna\ \textcolor{keywordflow}{in}\ columnasAdicionales)}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00338}00338\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00339}00339\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (animal.CamposAdicionales.TryGetValue(columna,\ out\ var\ valor))}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00340}00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00341}00341\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ csvOutput.WriteField(valor);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00342}00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00343}00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00344}00344\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00345}00345\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ csvOutput.WriteField(\textcolor{stringliteral}{"{}"{}});\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00346}00346\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00347}00347\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00348}00348\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ csvOutput.NextRecord();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00349}00349\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00350}00350\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00351}00351\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00352}00352\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}Archivo\ CSV\ creado\ exitosamente\ en:\ \{outputFilePath\}"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00353}00353\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00354}00354\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00355}00355\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00361}\mbox{\hyperlink{class_program_a93be828ac5129d9f77ed3022e5d8d380}{00361}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_program_a93be828ac5129d9f77ed3022e5d8d380}{IsValidUrl}}(\textcolor{keywordtype}{string}\ url,\textcolor{keywordtype}{string}\ patron)}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00362}00362\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00363}00363\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{string}.IsNullOrEmpty(url))}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00364}00364\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\textcolor{comment}{//Uso\ Regex\ para\ generar\ un\ patron\ de\ url}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00365}00365\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00366}00366\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ Regex.IsMatch(url,\ patron);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00367}00367\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00374}\mbox{\hyperlink{class_program_af31a5c8f046291c6c33d776d7f023dca}{00374}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_program_af31a5c8f046291c6c33d776d7f023dca}{GenerarWikiDataURL}}(\textcolor{keywordtype}{string}\ url,\ \textcolor{keywordtype}{string}\ animal)}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00375}00375\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00376}00376\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Buscar\ si\ el\ código\ de\ la\ entidad\ empieza\ por\ 'Q'\ y\ extraerlo}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00377}00377\ \ \ \ \ \ \ \ \ var\ match\ =\ Regex.Match(url,\ \textcolor{stringliteral}{@"{}Q\(\backslash\)d+"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00378}00378\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (match.Success)}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00379}00379\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00380}00380\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$\textcolor{stringliteral}{"{}https://www.wikidata.org/wiki/\{match.Value\}"{}};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00381}00381\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00382}00382\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00383}00383\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00384}00384\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}No\ se\ pudo\ corregir\ la\ URL\ de\ Wikidata\ para\ \{animal\}"{}});}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00385}00385\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \$\textcolor{stringliteral}{"{}https://www.wikidata.org/wiki/Q"{}};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00386}00386\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00387}00387\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00388}00388\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00389}00389\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00395}\mbox{\hyperlink{class_program_a55789a418a83b5ad06c0e2130bd52649}{00395}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ List<RegistroAnimal>\ \mbox{\hyperlink{class_program_a55789a418a83b5ad06c0e2130bd52649}{NormalizacionAnimales}}(List<RegistroAnimal>\ records)}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00396}00396\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00397}00397\ \ \ \ \ \ \ \ \ var\ animalSynonyms\ =\ \textcolor{keyword}{new}\ Dictionary<string,\ string>(StringComparer.OrdinalIgnoreCase)}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00398}00398\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00399}00399\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}burro"{}},\ \textcolor{stringliteral}{"{}asno"{}}\ \},\ \ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00400}00400\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \textcolor{stringliteral}{"{}asno"{}},\ \textcolor{stringliteral}{"{}asno"{}}\ \},}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00401}00401\ \ \ \ \ \ \ \ \ \ \ \ \ \{\textcolor{stringliteral}{"{}camaleón"{}},\textcolor{stringliteral}{"{}camaleon"{}}\ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00402}00402\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00403}00403\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00404}00404\ \ \ \ \ \ \ \ \ var\ registrosNormalizados\ =\ \textcolor{keyword}{new}\ List<RegistroAnimal>();}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00405}00405\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00406}00406\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00407}00407\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ record\ \textcolor{keywordflow}{in}\ records)}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00408}00408\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00409}00409\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (record.Animal\ !=\ \textcolor{keyword}{null}\ \&\&\ animalSynonyms.ContainsKey(record.Animal))}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00410}00410\ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00411}00411\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ record.Animal\ =\ animalSynonyms[record.Animal];}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00412}00412\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00413}00413\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00414}00414\ \ \ \ \ \ \ \ \ \ \ \ \ registrosNormalizados.Add(record);}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00415}00415\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00416}00416\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ registrosNormalizados;}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00417}00417\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00418}00418\ }
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00419}00419\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_program_8cs_source_l00420}00420\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,178 @@
+\doxysection{Prado\+Helper Class Reference}
+\hypertarget{class_prado_helper}{}\label{class_prado_helper}\index{PradoHelper@{PradoHelper}}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int string string siglo\+Mas\+Popular \mbox{\hyperlink{class_prado_helper_a6be3c130718e6cf97e1c6a4b6e2cef36}{Obtener\+Info\+Prado}} (string animal)
+\item 
+static string \mbox{\hyperlink{class_prado_helper_a2db0117b1bcb916f436338e79c4fda77}{Obtener\+RDFDel\+Prado}} (string animal, int pagina)
+\begin{DoxyCompactList}\small\item\em Método para obtener el RDF del Prado para un animal específico. \end{DoxyCompactList}\item 
+static List$<$ string $>$ \mbox{\hyperlink{class_prado_helper_a280f245dd7aa78f62b82023cce3a1289}{Parsear\+RDFObras}} (string rdf\+Content, out List$<$ int $>$ obras\+Siglos)
+\begin{DoxyCompactList}\small\item\em Parsear el RDF para extraer los nombres de las obras y sus siglos. \end{DoxyCompactList}\item 
+static string int siglo \mbox{\hyperlink{class_prado_helper_a7c342414176459fbf1d4c20e6657172c}{Buscar\+Titulo\+YSiglo\+De\+Obra}} (string obra\+Url)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_prado_helper_a62de674a8533c4ff73e5003138bdff76}{numero\+Obras}}
+\begin{DoxyCompactList}\small\item\em Método auxiliar para obtener el número total de obras, sus nombres y el siglo más popular para un animal. \end{DoxyCompactList}\item 
+static int string \mbox{\hyperlink{class_prado_helper_a08b98e5efea1da3a5fe08154464705ac}{obras\+Nombres}}
+\item 
+static string \mbox{\hyperlink{class_prado_helper_aa89eae7a102f15c0e3e507f41315cda6}{titulo}}
+\begin{DoxyCompactList}\small\item\em Método auxiliar para buscar el siglo de una obra basada en su URL. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_prado_helper_8cs_source_l00010}{10}} of file \mbox{\hyperlink{_prado_helper_8cs_source}{Prado\+Helper.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_prado_helper_a7c342414176459fbf1d4c20e6657172c}\label{class_prado_helper_a7c342414176459fbf1d4c20e6657172c} 
+\index{PradoHelper@{PradoHelper}!BuscarTituloYSigloDeObra@{BuscarTituloYSigloDeObra}}
+\index{BuscarTituloYSigloDeObra@{BuscarTituloYSigloDeObra}!PradoHelper@{PradoHelper}}
+\doxysubsubsection{\texorpdfstring{BuscarTituloYSigloDeObra()}{BuscarTituloYSigloDeObra()}}
+{\footnotesize\ttfamily static string int siglo Prado\+Helper.\+Buscar\+Titulo\+YSiglo\+De\+Obra (\begin{DoxyParamCaption}\item[{string}]{obra\+Url }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_prado_helper_8cs_source_l00147}{147}} of file \mbox{\hyperlink{_prado_helper_8cs_source}{Prado\+Helper.\+cs}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_prado_helper_a7c342414176459fbf1d4c20e6657172c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_prado_helper_a6be3c130718e6cf97e1c6a4b6e2cef36}\label{class_prado_helper_a6be3c130718e6cf97e1c6a4b6e2cef36} 
+\index{PradoHelper@{PradoHelper}!ObtenerInfoPrado@{ObtenerInfoPrado}}
+\index{ObtenerInfoPrado@{ObtenerInfoPrado}!PradoHelper@{PradoHelper}}
+\doxysubsubsection{\texorpdfstring{ObtenerInfoPrado()}{ObtenerInfoPrado()}}
+{\footnotesize\ttfamily static int string string siglo\+Mas\+Popular Prado\+Helper.\+Obtener\+Info\+Prado (\begin{DoxyParamCaption}\item[{string}]{animal }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_prado_helper_8cs_source_l00017}{17}} of file \mbox{\hyperlink{_prado_helper_8cs_source}{Prado\+Helper.\+cs}}.
+
+\Hypertarget{class_prado_helper_a2db0117b1bcb916f436338e79c4fda77}\label{class_prado_helper_a2db0117b1bcb916f436338e79c4fda77} 
+\index{PradoHelper@{PradoHelper}!ObtenerRDFDelPrado@{ObtenerRDFDelPrado}}
+\index{ObtenerRDFDelPrado@{ObtenerRDFDelPrado}!PradoHelper@{PradoHelper}}
+\doxysubsubsection{\texorpdfstring{ObtenerRDFDelPrado()}{ObtenerRDFDelPrado()}}
+{\footnotesize\ttfamily static string Prado\+Helper.\+Obtener\+RDFDel\+Prado (\begin{DoxyParamCaption}\item[{string}]{animal,  }\item[{int}]{pagina }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Método para obtener el RDF del Prado para un animal específico. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em animal} & El nombre del animal.\\
+\hline
+{\em pagina} & La página actual para paginar resultados.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+El contenido RDF de la respuesta.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_prado_helper_8cs_source_l00074}{74}} of file \mbox{\hyperlink{_prado_helper_8cs_source}{Prado\+Helper.\+cs}}.
+
+\Hypertarget{class_prado_helper_a280f245dd7aa78f62b82023cce3a1289}\label{class_prado_helper_a280f245dd7aa78f62b82023cce3a1289} 
+\index{PradoHelper@{PradoHelper}!ParsearRDFObras@{ParsearRDFObras}}
+\index{ParsearRDFObras@{ParsearRDFObras}!PradoHelper@{PradoHelper}}
+\doxysubsubsection{\texorpdfstring{ParsearRDFObras()}{ParsearRDFObras()}}
+{\footnotesize\ttfamily static List$<$ string $>$ Prado\+Helper.\+Parsear\+RDFObras (\begin{DoxyParamCaption}\item[{string}]{rdf\+Content,  }\item[{out List$<$ int $>$}]{obras\+Siglos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Parsear el RDF para extraer los nombres de las obras y sus siglos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rdf\+Content} & El contenido RDF.\\
+\hline
+{\em obras\+Siglos} & Lista de los siglos de las obras.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Una lista con los nombres de las obras.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_prado_helper_8cs_source_l00103}{103}} of file \mbox{\hyperlink{_prado_helper_8cs_source}{Prado\+Helper.\+cs}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_prado_helper_a280f245dd7aa78f62b82023cce3a1289_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_prado_helper_a62de674a8533c4ff73e5003138bdff76}\label{class_prado_helper_a62de674a8533c4ff73e5003138bdff76} 
+\index{PradoHelper@{PradoHelper}!numeroObras@{numeroObras}}
+\index{numeroObras@{numeroObras}!PradoHelper@{PradoHelper}}
+\doxysubsubsection{\texorpdfstring{numeroObras}{numeroObras}}
+{\footnotesize\ttfamily int Prado\+Helper.\+numero\+Obras\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Método auxiliar para obtener el número total de obras, sus nombres y el siglo más popular para un animal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em animal} & El nombre del animal.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Una tupla con el número de obras, el nombre de todas las obras y el siglo más popular.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_prado_helper_8cs_source_l00017}{17}} of file \mbox{\hyperlink{_prado_helper_8cs_source}{Prado\+Helper.\+cs}}.
+
+\Hypertarget{class_prado_helper_a08b98e5efea1da3a5fe08154464705ac}\label{class_prado_helper_a08b98e5efea1da3a5fe08154464705ac} 
+\index{PradoHelper@{PradoHelper}!obrasNombres@{obrasNombres}}
+\index{obrasNombres@{obrasNombres}!PradoHelper@{PradoHelper}}
+\doxysubsubsection{\texorpdfstring{obrasNombres}{obrasNombres}}
+{\footnotesize\ttfamily int string Prado\+Helper.\+obras\+Nombres\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{_prado_helper_8cs_source_l00017}{17}} of file \mbox{\hyperlink{_prado_helper_8cs_source}{Prado\+Helper.\+cs}}.
+
+\Hypertarget{class_prado_helper_aa89eae7a102f15c0e3e507f41315cda6}\label{class_prado_helper_aa89eae7a102f15c0e3e507f41315cda6} 
+\index{PradoHelper@{PradoHelper}!titulo@{titulo}}
+\index{titulo@{titulo}!PradoHelper@{PradoHelper}}
+\doxysubsubsection{\texorpdfstring{titulo}{titulo}}
+{\footnotesize\ttfamily string Prado\+Helper.\+titulo\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Método auxiliar para buscar el siglo de una obra basada en su URL. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obra\+Url} & URL de la obra.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+El siglo de la obra.
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{_prado_helper_8cs_source_l00147}{147}} of file \mbox{\hyperlink{_prado_helper_8cs_source}{Prado\+Helper.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/usuario/source/repos/trasteo/trasteo/\mbox{\hyperlink{_prado_helper_8cs}{Prado\+Helper.\+cs}}\end{DoxyCompactItemize}

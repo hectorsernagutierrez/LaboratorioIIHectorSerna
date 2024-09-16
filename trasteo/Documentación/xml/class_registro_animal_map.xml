@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="class_registro_animal_map" kind="class" language="C#" prot="public">
+    <compoundname>RegistroAnimalMap</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">ClassMap&lt; RegistroAnimal &gt;</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_registro_animal_map_1a0f6a4ef74746adc95838490f8a4091c6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>RegistroAnimalMap.RegistroAnimalMap</definition>
+        <argsstring>()</argsstring>
+        <name>RegistroAnimalMap</name>
+        <qualifiedname>RegistroAnimalMap.RegistroAnimalMap</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/usuario/source/repos/trasteo/trasteo/Program.cs" line="42" column="12" bodyfile="C:/Users/usuario/source/repos/trasteo/trasteo/Program.cs" bodystart="42" bodyend="47"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ClassMap&lt; RegistroAnimal &gt;</label>
+      </node>
+      <node id="1">
+        <label>RegistroAnimalMap</label>
+        <link refid="class_registro_animal_map"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>ClassMap&lt; RegistroAnimal &gt;</label>
+      </node>
+      <node id="1">
+        <label>RegistroAnimalMap</label>
+        <link refid="class_registro_animal_map"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/usuario/source/repos/trasteo/trasteo/Program.cs" line="40" column="7" bodyfile="C:/Users/usuario/source/repos/trasteo/trasteo/Program.cs" bodystart="41" bodyend="48"/>
+    <listofallmembers>
+      <member refid="class_registro_animal_map_1a0f6a4ef74746adc95838490f8a4091c6" prot="public" virt="non-virtual"><scope>RegistroAnimalMap</scope><name>RegistroAnimalMap</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

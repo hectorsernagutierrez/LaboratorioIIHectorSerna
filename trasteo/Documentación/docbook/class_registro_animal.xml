@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_registro_animal" xml:lang="en-US">
+<title>RegistroAnimal Class Reference</title>
+<indexterm><primary>RegistroAnimal</primary></indexterm>
+<simplesect>
+    <title>Properties    </title>
+        <itemizedlist>
+            <listitem><para>string? <link linkend="_class_registro_animal_1aa983b61fc24dc46d0286f509cf47e0da">Animal</link><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>string <link linkend="_class_registro_animal_1a17accea9fadc81cf5b0c71988bc61ce5">Campo</link><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>string? <link linkend="_class_registro_animal_1a049357fe61e2b8cd3783b17851c901d3">Informacion</link><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>string? <link linkend="_class_registro_animal_1a975bdbff2f8667e49b3d3d30b6cfa5ec">Descripcion</link><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>string? <link linkend="_class_registro_animal_1ab307151bdf406ab88c61f331d71c7238">Velocidad</link><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>string? <link linkend="_class_registro_animal_1a521d4346616eed60362ab951e823a60b">Imagen</link><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>string? <link linkend="_class_registro_animal_1afe2a501a69ee8c4ad75ec981cbf1fd40">NombreCientifico</link><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>string? <link linkend="_class_registro_animal_1a2e557c037d91f06fb65250c64f2d7944">LinkWikidata</link><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>string <link linkend="_class_registro_animal_1a03f8e9e6215d8516f0bf9b6d8ab4e0b7">Familia</link><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>string[] <link linkend="_class_registro_animal_1a52b265a3684a2b19deb8eccc23110fa1">ObrasPrado</link><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>int? <link linkend="_class_registro_animal_1a26369bbabfff0d30a00dbe24f66fde9a">numObra</link><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>string? <link linkend="_class_registro_animal_1a55f6ee1de2f09b206b3ef2175563d56c">sigloPop</link><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>Dictionary&lt; string, string?&gt; <link linkend="_class_registro_animal_1afa59dd88f82c99b8c77191cb3cb44e9e">CamposAdicionales</link> = new Dictionary&lt;string, string?&gt;()<computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line <link linkend="__program_8cs_source_1l00016">16</link> of file <link linkend="__program_8cs_source">Program.cs</link>.</para>
+</section>
+<section>
+<title>Property Documentation</title>
+<anchor xml:id="_class_registro_animal_1aa983b61fc24dc46d0286f509cf47e0da"/><section>
+    <title>Animal</title>
+<indexterm><primary>Animal</primary><secondary>RegistroAnimal</secondary></indexterm>
+<indexterm><primary>RegistroAnimal</primary><secondary>Animal</secondary></indexterm>
+<para><computeroutput>string? RegistroAnimal.Animal<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__program_8cs_source_1l00018">18</link> of file <link linkend="__program_8cs_source">Program.cs</link>.</para>
+</section>
+<anchor xml:id="_class_registro_animal_1a17accea9fadc81cf5b0c71988bc61ce5"/><section>
+    <title>Campo</title>
+<indexterm><primary>Campo</primary><secondary>RegistroAnimal</secondary></indexterm>
+<indexterm><primary>RegistroAnimal</primary><secondary>Campo</secondary></indexterm>
+<para><computeroutput>string RegistroAnimal.Campo<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__program_8cs_source_1l00019">19</link> of file <link linkend="__program_8cs_source">Program.cs</link>.</para>
+</section>
+<anchor xml:id="_class_registro_animal_1afa59dd88f82c99b8c77191cb3cb44e9e"/><section>
+    <title>CamposAdicionales</title>
+<indexterm><primary>CamposAdicionales</primary><secondary>RegistroAnimal</secondary></indexterm>
+<indexterm><primary>RegistroAnimal</primary><secondary>CamposAdicionales</secondary></indexterm>
+<para><computeroutput>Dictionary&lt;string, string?&gt; RegistroAnimal.CamposAdicionales = new Dictionary&lt;string, string?&gt;()<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__program_8cs_source_1l00032">32</link> of file <link linkend="__program_8cs_source">Program.cs</link>.</para>
+</section>
+<anchor xml:id="_class_registro_animal_1a975bdbff2f8667e49b3d3d30b6cfa5ec"/><section>
+    <title>Descripcion</title>
+<indexterm><primary>Descripcion</primary><secondary>RegistroAnimal</secondary></indexterm>
+<indexterm><primary>RegistroAnimal</primary><secondary>Descripcion</secondary></indexterm>
+<para><computeroutput>string? RegistroAnimal.Descripcion<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__program_8cs_source_1l00022">22</link> of file <link linkend="__program_8cs_source">Program.cs</link>.</para>
+</section>
+<anchor xml:id="_class_registro_animal_1a03f8e9e6215d8516f0bf9b6d8ab4e0b7"/><section>
+    <title>Familia</title>
+<indexterm><primary>Familia</primary><secondary>RegistroAnimal</secondary></indexterm>
+<indexterm><primary>RegistroAnimal</primary><secondary>Familia</secondary></indexterm>
+<para><computeroutput>string RegistroAnimal.Familia<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__program_8cs_source_1l00027">27</link> of file <link linkend="__program_8cs_source">Program.cs</link>.</para>
+</section>
+<anchor xml:id="_class_registro_animal_1a521d4346616eed60362ab951e823a60b"/><section>
+    <title>Imagen</title>
+<indexterm><primary>Imagen</primary><secondary>RegistroAnimal</secondary></indexterm>
+<indexterm><primary>RegistroAnimal</primary><secondary>Imagen</secondary></indexterm>
+<para><computeroutput>string? RegistroAnimal.Imagen<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__program_8cs_source_1l00024">24</link> of file <link linkend="__program_8cs_source">Program.cs</link>.</para>
+</section>
+<anchor xml:id="_class_registro_animal_1a049357fe61e2b8cd3783b17851c901d3"/><section>
+    <title>Informacion</title>
+<indexterm><primary>Informacion</primary><secondary>RegistroAnimal</secondary></indexterm>
+<indexterm><primary>RegistroAnimal</primary><secondary>Informacion</secondary></indexterm>
+<para><computeroutput>string? RegistroAnimal.Informacion<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__program_8cs_source_1l00020">20</link> of file <link linkend="__program_8cs_source">Program.cs</link>.</para>
+</section>
+<anchor xml:id="_class_registro_animal_1a2e557c037d91f06fb65250c64f2d7944"/><section>
+    <title>LinkWikidata</title>
+<indexterm><primary>LinkWikidata</primary><secondary>RegistroAnimal</secondary></indexterm>
+<indexterm><primary>RegistroAnimal</primary><secondary>LinkWikidata</secondary></indexterm>
+<para><computeroutput>string? RegistroAnimal.LinkWikidata<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__program_8cs_source_1l00026">26</link> of file <link linkend="__program_8cs_source">Program.cs</link>.</para>
+</section>
+<anchor xml:id="_class_registro_animal_1afe2a501a69ee8c4ad75ec981cbf1fd40"/><section>
+    <title>NombreCientifico</title>
+<indexterm><primary>NombreCientifico</primary><secondary>RegistroAnimal</secondary></indexterm>
+<indexterm><primary>RegistroAnimal</primary><secondary>NombreCientifico</secondary></indexterm>
+<para><computeroutput>string? RegistroAnimal.NombreCientifico<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__program_8cs_source_1l00025">25</link> of file <link linkend="__program_8cs_source">Program.cs</link>.</para>
+</section>
+<anchor xml:id="_class_registro_animal_1a26369bbabfff0d30a00dbe24f66fde9a"/><section>
+    <title>numObra</title>
+<indexterm><primary>numObra</primary><secondary>RegistroAnimal</secondary></indexterm>
+<indexterm><primary>RegistroAnimal</primary><secondary>numObra</secondary></indexterm>
+<para><computeroutput>int? RegistroAnimal.numObra<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__program_8cs_source_1l00029">29</link> of file <link linkend="__program_8cs_source">Program.cs</link>.</para>
+</section>
+<anchor xml:id="_class_registro_animal_1a52b265a3684a2b19deb8eccc23110fa1"/><section>
+    <title>ObrasPrado</title>
+<indexterm><primary>ObrasPrado</primary><secondary>RegistroAnimal</secondary></indexterm>
+<indexterm><primary>RegistroAnimal</primary><secondary>ObrasPrado</secondary></indexterm>
+<para><computeroutput>string [] RegistroAnimal.ObrasPrado<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__program_8cs_source_1l00028">28</link> of file <link linkend="__program_8cs_source">Program.cs</link>.</para>
+</section>
+<anchor xml:id="_class_registro_animal_1a55f6ee1de2f09b206b3ef2175563d56c"/><section>
+    <title>sigloPop</title>
+<indexterm><primary>sigloPop</primary><secondary>RegistroAnimal</secondary></indexterm>
+<indexterm><primary>RegistroAnimal</primary><secondary>sigloPop</secondary></indexterm>
+<para><computeroutput>string? RegistroAnimal.sigloPop<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__program_8cs_source_1l00031">31</link> of file <link linkend="__program_8cs_source">Program.cs</link>.</para>
+</section>
+<anchor xml:id="_class_registro_animal_1ab307151bdf406ab88c61f331d71c7238"/><section>
+    <title>Velocidad</title>
+<indexterm><primary>Velocidad</primary><secondary>RegistroAnimal</secondary></indexterm>
+<indexterm><primary>RegistroAnimal</primary><secondary>Velocidad</secondary></indexterm>
+<para><computeroutput>string? RegistroAnimal.Velocidad<computeroutput>[get]</computeroutput>, <computeroutput>[set]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__program_8cs_source_1l00023">23</link> of file <link linkend="__program_8cs_source">Program.cs</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+C:/Users/usuario/source/repos/trasteo/trasteo/<link linkend="__program_8cs">Program.cs</link></section>
+</section>

@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="__prado_helper_8cs_source" xml:lang="en-US">
+<title>C:/Users/usuario/source/repos/trasteo/trasteo/PradoHelper.cs</title>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered"><anchor xml:id="__prado_helper_8cs_source_1l00001"/>00001 
+<anchor xml:id="__prado_helper_8cs_source_1l00002"/>00002 <emphasis role="keyword">using&#32;</emphasis>RestSharp;
+<anchor xml:id="__prado_helper_8cs_source_1l00003"/>00003 <emphasis role="keyword">using&#32;</emphasis>System;
+<anchor xml:id="__prado_helper_8cs_source_1l00004"/>00004 <emphasis role="keyword">using&#32;</emphasis>System.Collections.Generic;
+<anchor xml:id="__prado_helper_8cs_source_1l00005"/>00005 <emphasis role="keyword">using&#32;</emphasis>System.IO;
+<anchor xml:id="__prado_helper_8cs_source_1l00006"/>00006 <emphasis role="keyword">using&#32;</emphasis>System.Text;
+<anchor xml:id="__prado_helper_8cs_source_1l00007"/>00007 <emphasis role="keyword">using&#32;</emphasis>System.Text.RegularExpressions;
+<anchor xml:id="__prado_helper_8cs_source_1l00008"/>00008 <emphasis role="keyword">using&#32;</emphasis>System.Xml;
+<anchor xml:id="__prado_helper_8cs_source_1l00009"/>00009 
+<anchor xml:id="__prado_helper_8cs_source_1l00010"/><link linkend="_class_prado_helper">00010</link> <emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="_class_prado_helper">PradoHelper</link>
+<anchor xml:id="__prado_helper_8cs_source_1l00011"/>00011 {
+<anchor xml:id="__prado_helper_8cs_source_1l00017"/><link linkend="_class_prado_helper_1a62de674a8533c4ff73e5003138bdff76">00017</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">static</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>&#32;<link linkend="_class_prado_helper_1a62de674a8533c4ff73e5003138bdff76">numeroObras</link>,&#32;<emphasis role="keywordtype">string</emphasis>&#32;<link linkend="_class_prado_helper_1a08b98e5efea1da3a5fe08154464705ac">obrasNombres</link>,&#32;<emphasis role="keywordtype">string</emphasis>&#32;sigloMasPopular)&#32;<link linkend="_class_prado_helper_1a6be3c130718e6cf97e1c6a4b6e2cef36">ObtenerInfoPrado</link>(<emphasis role="keywordtype">string</emphasis>&#32;animal)
+<anchor xml:id="__prado_helper_8cs_source_1l00018"/>00018 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__prado_helper_8cs_source_1l00019"/>00019 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;<link linkend="_class_prado_helper_1a08b98e5efea1da3a5fe08154464705ac">obrasNombres</link>&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;List&lt;string&gt;();
+<anchor xml:id="__prado_helper_8cs_source_1l00020"/>00020 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;siglosContador&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;Dictionary&lt;int,&#32;int&gt;();&#32;<emphasis role="comment">//&#32;Contador&#32;de&#32;obras&#32;por&#32;siglo</emphasis>
+<anchor xml:id="__prado_helper_8cs_source_1l00021"/>00021 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;pagina&#32;=&#32;1;
+<anchor xml:id="__prado_helper_8cs_source_1l00022"/>00022 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;rdfResult&#32;=&#32;<link linkend="_class_prado_helper_1a2db0117b1bcb916f436338e79c4fda77">ObtenerRDFDelPrado</link>(animal.ToLower(),&#32;pagina).TrimStart();
+<anchor xml:id="__prado_helper_8cs_source_1l00023"/>00023 
+<anchor xml:id="__prado_helper_8cs_source_1l00024"/>00024 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Crear&#32;un&#32;XmlDocument</emphasis>
+<anchor xml:id="__prado_helper_8cs_source_1l00025"/>00025 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;xmlDoc&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;XmlDocument();
+<anchor xml:id="__prado_helper_8cs_source_1l00026"/>00026 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xmlDoc.LoadXml(rdfResult);
+<anchor xml:id="__prado_helper_8cs_source_1l00027"/>00027 
+<anchor xml:id="__prado_helper_8cs_source_1l00028"/>00028 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;siglos&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;List&lt;int&gt;();
+<anchor xml:id="__prado_helper_8cs_source_1l00029"/>00029 
+<anchor xml:id="__prado_helper_8cs_source_1l00030"/>00030 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Obtener&#32;el&#32;número&#32;de&#32;obras</emphasis>
+<anchor xml:id="__prado_helper_8cs_source_1l00031"/>00031 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;numeroObrasNodo&#32;=&#32;<emphasis role="keywordtype">int</emphasis>.Parse(xmlDoc.SelectSingleNode(<emphasis role="stringliteral">&quot;//gnoss:NumberOfResults&quot;</emphasis>,&#32;ObtenerNamespaceManager(xmlDoc))?.InnerText);
+<anchor xml:id="__prado_helper_8cs_source_1l00032"/>00032 
+<anchor xml:id="__prado_helper_8cs_source_1l00033"/>00033 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;numPags&#32;=&#32;(numeroObrasNodo&#32;/&#32;18)+1&#32;;
+<anchor xml:id="__prado_helper_8cs_source_1l00034"/>00034 
+<anchor xml:id="__prado_helper_8cs_source_1l00035"/>00035 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">for</emphasis>&#32;(pagina&#32;=&#32;1;&#32;pagina&#32;&lt;&#32;numPags;&#32;pagina++)
+<anchor xml:id="__prado_helper_8cs_source_1l00036"/>00036 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__prado_helper_8cs_source_1l00037"/>00037 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Hacer&#32;la&#32;petición&#32;paginada&#32;al&#32;RDF&#32;del&#32;Prado</emphasis>
+<anchor xml:id="__prado_helper_8cs_source_1l00038"/>00038 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rdfResult&#32;=&#32;<link linkend="_class_prado_helper_1a2db0117b1bcb916f436338e79c4fda77">ObtenerRDFDelPrado</link>(animal,&#32;pagina);
+<anchor xml:id="__prado_helper_8cs_source_1l00039"/>00039 
+<anchor xml:id="__prado_helper_8cs_source_1l00040"/>00040 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Parsear&#32;el&#32;resultado&#32;RDF</emphasis>
+<anchor xml:id="__prado_helper_8cs_source_1l00041"/>00041 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;obrasPagina&#32;=&#32;<link linkend="_class_prado_helper_1a280f245dd7aa78f62b82023cce3a1289">ParsearRDFObras</link>(rdfResult,&#32;out&#32;var&#32;obrasSiglos);
+<anchor xml:id="__prado_helper_8cs_source_1l00042"/>00042 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;siglos.AddRange(obrasSiglos);
+<anchor xml:id="__prado_helper_8cs_source_1l00043"/>00043 
+<anchor xml:id="__prado_helper_8cs_source_1l00044"/>00044 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_class_prado_helper_1a08b98e5efea1da3a5fe08154464705ac">obrasNombres</link>.AddRange(obrasPagina);
+<anchor xml:id="__prado_helper_8cs_source_1l00045"/>00045 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__prado_helper_8cs_source_1l00046"/>00046 
+<anchor xml:id="__prado_helper_8cs_source_1l00047"/>00047 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Contar&#32;los&#32;siglos</emphasis>
+<anchor xml:id="__prado_helper_8cs_source_1l00048"/>00048 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">foreach</emphasis>&#32;(var&#32;siglo&#32;<emphasis role="keywordflow">in</emphasis>&#32;siglos)
+<anchor xml:id="__prado_helper_8cs_source_1l00049"/>00049 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__prado_helper_8cs_source_1l00050"/>00050 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(siglosContador.ContainsKey(siglo))
+<anchor xml:id="__prado_helper_8cs_source_1l00051"/>00051 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__prado_helper_8cs_source_1l00052"/>00052 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;siglosContador[siglo]++;
+<anchor xml:id="__prado_helper_8cs_source_1l00053"/>00053 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__prado_helper_8cs_source_1l00054"/>00054 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+<anchor xml:id="__prado_helper_8cs_source_1l00055"/>00055 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__prado_helper_8cs_source_1l00056"/>00056 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;siglosContador[siglo]&#32;=&#32;1;
+<anchor xml:id="__prado_helper_8cs_source_1l00057"/>00057 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__prado_helper_8cs_source_1l00058"/>00058 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__prado_helper_8cs_source_1l00059"/>00059 
+<anchor xml:id="__prado_helper_8cs_source_1l00060"/>00060 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Obtener&#32;el&#32;siglo&#32;con&#32;más&#32;obras</emphasis>
+<anchor xml:id="__prado_helper_8cs_source_1l00061"/>00061 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;sigloMasPopular&#32;=&#32;siglosContador.Count&#32;&gt;&#32;0
+<anchor xml:id="__prado_helper_8cs_source_1l00062"/>00062 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;?&#32;siglosContador.Aggregate((l,&#32;r)&#32;=&gt;&#32;l.Value&#32;&gt;&#32;r.Value&#32;?&#32;l&#32;:&#32;r).Key.ToString()
+<anchor xml:id="__prado_helper_8cs_source_1l00063"/>00063 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;:&#32;<emphasis role="stringliteral">&quot;N/A&quot;</emphasis>;
+<anchor xml:id="__prado_helper_8cs_source_1l00064"/>00064 
+<anchor xml:id="__prado_helper_8cs_source_1l00065"/>00065 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(numeroObrasNodo,&#32;<emphasis role="keywordtype">string</emphasis>.Join(<emphasis role="stringliteral">&quot;|&quot;</emphasis>,&#32;<link linkend="_class_prado_helper_1a08b98e5efea1da3a5fe08154464705ac">obrasNombres</link>),&#32;sigloMasPopular);
+<anchor xml:id="__prado_helper_8cs_source_1l00066"/>00066 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__prado_helper_8cs_source_1l00067"/>00067 
+<anchor xml:id="__prado_helper_8cs_source_1l00074"/><link linkend="_class_prado_helper_1a2db0117b1bcb916f436338e79c4fda77">00074</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keywordtype">string</emphasis>&#32;<link linkend="_class_prado_helper_1a2db0117b1bcb916f436338e79c4fda77">ObtenerRDFDelPrado</link>(<emphasis role="keywordtype">string</emphasis>&#32;animal,&#32;<emphasis role="keywordtype">int</emphasis>&#32;pagina)
+<anchor xml:id="__prado_helper_8cs_source_1l00075"/>00075 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__prado_helper_8cs_source_1l00076"/>00076 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;options&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;RestClientOptions(<emphasis role="stringliteral">&quot;https://www.museodelprado.es&quot;</emphasis>)
+<anchor xml:id="__prado_helper_8cs_source_1l00077"/>00077 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__prado_helper_8cs_source_1l00078"/>00078 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;MaxTimeout&#32;=&#32;-1,
+<anchor xml:id="__prado_helper_8cs_source_1l00079"/>00079 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;};
+<anchor xml:id="__prado_helper_8cs_source_1l00080"/>00080 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;client&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;RestClient(options);
+<anchor xml:id="__prado_helper_8cs_source_1l00081"/>00081 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;request&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;RestRequest($<emphasis role="stringliteral">&quot;/coleccion/obras-de-arte?searchObras={animal}&amp;rdf=null&amp;pagina={pagina}&quot;</emphasis>,&#32;Method.Get);
+<anchor xml:id="__prado_helper_8cs_source_1l00082"/>00082 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;request.AddHeader(<emphasis role="stringliteral">&quot;Accept&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;application/rdf+xml&quot;</emphasis>);
+<anchor xml:id="__prado_helper_8cs_source_1l00083"/>00083 
+<anchor xml:id="__prado_helper_8cs_source_1l00084"/>00084 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;response&#32;=&#32;client.Execute(request);
+<anchor xml:id="__prado_helper_8cs_source_1l00085"/>00085 
+<anchor xml:id="__prado_helper_8cs_source_1l00086"/>00086 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(response.IsSuccessful)
+<anchor xml:id="__prado_helper_8cs_source_1l00087"/>00087 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__prado_helper_8cs_source_1l00088"/>00088 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;response.Content;
+<anchor xml:id="__prado_helper_8cs_source_1l00089"/>00089 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__prado_helper_8cs_source_1l00090"/>00090 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>
+<anchor xml:id="__prado_helper_8cs_source_1l00091"/>00091 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__prado_helper_8cs_source_1l00092"/>00092 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Console.WriteLine($<emphasis role="stringliteral">&quot;Error&#32;al&#32;obtener&#32;RDF&#32;del&#32;Prado&#32;para&#32;{animal}:&#32;{response.ErrorMessage}&quot;</emphasis>);
+<anchor xml:id="__prado_helper_8cs_source_1l00093"/>00093 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;<emphasis role="stringliteral">&quot;&quot;</emphasis>;
+<anchor xml:id="__prado_helper_8cs_source_1l00094"/>00094 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__prado_helper_8cs_source_1l00095"/>00095 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__prado_helper_8cs_source_1l00096"/>00096 
+<anchor xml:id="__prado_helper_8cs_source_1l00103"/><link linkend="_class_prado_helper_1a280f245dd7aa78f62b82023cce3a1289">00103</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">static</emphasis>&#32;List&lt;string&gt;&#32;<link linkend="_class_prado_helper_1a280f245dd7aa78f62b82023cce3a1289">ParsearRDFObras</link>(<emphasis role="keywordtype">string</emphasis>&#32;rdfContent,&#32;out&#32;List&lt;int&gt;&#32;obrasSiglos)
+<anchor xml:id="__prado_helper_8cs_source_1l00104"/>00104 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__prado_helper_8cs_source_1l00105"/>00105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;obras&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;List&lt;string&gt;();
+<anchor xml:id="__prado_helper_8cs_source_1l00106"/>00106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;obrasSiglos&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;List&lt;int&gt;();
+<anchor xml:id="__prado_helper_8cs_source_1l00107"/>00107 
+<anchor xml:id="__prado_helper_8cs_source_1l00108"/>00108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<emphasis role="keywordtype">string</emphasis>.IsNullOrEmpty(rdfContent))&#32;<emphasis role="keywordflow">return</emphasis>&#32;obras;
+<anchor xml:id="__prado_helper_8cs_source_1l00109"/>00109 
+<anchor xml:id="__prado_helper_8cs_source_1l00110"/>00110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">try</emphasis>
+<anchor xml:id="__prado_helper_8cs_source_1l00111"/>00111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__prado_helper_8cs_source_1l00112"/>00112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Crear&#32;un&#32;XmlDocument&#32;y&#32;cargar&#32;el&#32;contenido</emphasis>
+<anchor xml:id="__prado_helper_8cs_source_1l00113"/>00113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;xmlDoc&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;XmlDocument();
+<anchor xml:id="__prado_helper_8cs_source_1l00114"/>00114 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xmlDoc.LoadXml(rdfContent);
+<anchor xml:id="__prado_helper_8cs_source_1l00115"/>00115 
+<anchor xml:id="__prado_helper_8cs_source_1l00116"/>00116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Seleccionar&#32;los&#32;nodos&#32;&apos;Results&apos;</emphasis>
+<anchor xml:id="__prado_helper_8cs_source_1l00117"/>00117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;obrasNodos&#32;=&#32;xmlDoc.SelectNodes(<emphasis role="stringliteral">&quot;//gnoss:Results&quot;</emphasis>,&#32;ObtenerNamespaceManager(xmlDoc));
+<anchor xml:id="__prado_helper_8cs_source_1l00118"/>00118 
+<anchor xml:id="__prado_helper_8cs_source_1l00119"/>00119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">foreach</emphasis>&#32;(XmlNode&#32;obra&#32;<emphasis role="keywordflow">in</emphasis>&#32;obrasNodos)
+<anchor xml:id="__prado_helper_8cs_source_1l00120"/>00120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__prado_helper_8cs_source_1l00121"/>00121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;url&#32;=&#32;obra.Attributes[<emphasis role="stringliteral">&quot;rdf:resource&quot;</emphasis>]?.InnerText;
+<anchor xml:id="__prado_helper_8cs_source_1l00122"/>00122 
+<anchor xml:id="__prado_helper_8cs_source_1l00123"/>00123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!<emphasis role="keywordtype">string</emphasis>.IsNullOrEmpty(url))
+<anchor xml:id="__prado_helper_8cs_source_1l00124"/>00124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__prado_helper_8cs_source_1l00125"/>00125 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;(<link linkend="_class_prado_helper_1aa89eae7a102f15c0e3e507f41315cda6">titulo</link>,&#32;siglo)&#32;=&#32;<link linkend="_class_prado_helper_1a7c342414176459fbf1d4c20e6657172c">BuscarTituloYSigloDeObra</link>(url);
+<anchor xml:id="__prado_helper_8cs_source_1l00126"/>00126 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">string</emphasis>&#32;patron&#32;=&#32;<emphasis role="stringliteral">@&quot;obra-de-arte/([a-zA-Z0-9\-]+)/&quot;</emphasis>;
+<anchor xml:id="__prado_helper_8cs_source_1l00127"/>00127 
+<anchor xml:id="__prado_helper_8cs_source_1l00128"/>00128 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Match&#32;match&#32;=&#32;Regex.Match(url,&#32;patron);
+<anchor xml:id="__prado_helper_8cs_source_1l00129"/>00129 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;obras.Add(match.Groups[1].Value);&#32;<emphasis role="comment">//&#32;Agregar&#32;la&#32;URL&#32;del&#32;recurso&#32;como&#32;nombre&#32;de&#32;obra</emphasis>
+<anchor xml:id="__prado_helper_8cs_source_1l00130"/>00130 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;obrasSiglos.Add(siglo);
+<anchor xml:id="__prado_helper_8cs_source_1l00131"/>00131 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__prado_helper_8cs_source_1l00132"/>00132 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__prado_helper_8cs_source_1l00133"/>00133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__prado_helper_8cs_source_1l00134"/>00134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">catch</emphasis>&#32;(Exception&#32;ex)
+<anchor xml:id="__prado_helper_8cs_source_1l00135"/>00135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__prado_helper_8cs_source_1l00136"/>00136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Console.WriteLine($<emphasis role="stringliteral">&quot;Error&#32;al&#32;parsear&#32;RDF:&#32;{ex.Message}&quot;</emphasis>);
+<anchor xml:id="__prado_helper_8cs_source_1l00137"/>00137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__prado_helper_8cs_source_1l00138"/>00138 
+<anchor xml:id="__prado_helper_8cs_source_1l00139"/>00139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;obras;
+<anchor xml:id="__prado_helper_8cs_source_1l00140"/>00140 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__prado_helper_8cs_source_1l00141"/>00141 
+<anchor xml:id="__prado_helper_8cs_source_1l00147"/><link linkend="_class_prado_helper_1a7c342414176459fbf1d4c20e6657172c">00147</link> &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>&#32;<emphasis role="keyword">static</emphasis>&#32;(<emphasis role="keywordtype">string</emphasis>&#32;<link linkend="_class_prado_helper_1aa89eae7a102f15c0e3e507f41315cda6">titulo</link>,&#32;<emphasis role="keywordtype">int</emphasis>&#32;siglo)&#32;<link linkend="_class_prado_helper_1a7c342414176459fbf1d4c20e6657172c">BuscarTituloYSigloDeObra</link>(<emphasis role="keywordtype">string</emphasis>&#32;obraUrl)
+<anchor xml:id="__prado_helper_8cs_source_1l00148"/>00148 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__prado_helper_8cs_source_1l00149"/>00149 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;options&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;RestClientOptions(<emphasis role="stringliteral">&quot;https://www.museodelprado.es&quot;</emphasis>)
+<anchor xml:id="__prado_helper_8cs_source_1l00150"/>00150 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__prado_helper_8cs_source_1l00151"/>00151 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;MaxTimeout&#32;=&#32;-1,
+<anchor xml:id="__prado_helper_8cs_source_1l00152"/>00152 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;};
+<anchor xml:id="__prado_helper_8cs_source_1l00153"/>00153 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;client&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;RestClient(options);
+<anchor xml:id="__prado_helper_8cs_source_1l00154"/>00154 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;request&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;RestRequest($<emphasis role="stringliteral">&quot;{obraUrl}?rdf=null&quot;</emphasis>,&#32;Method.Get);
+<anchor xml:id="__prado_helper_8cs_source_1l00155"/>00155 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;request.AddHeader(<emphasis role="stringliteral">&quot;Accept&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;application/rdf+xml&quot;</emphasis>);
+<anchor xml:id="__prado_helper_8cs_source_1l00156"/>00156 
+<anchor xml:id="__prado_helper_8cs_source_1l00157"/>00157 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;response&#32;=&#32;client.Execute(request);
+<anchor xml:id="__prado_helper_8cs_source_1l00158"/>00158 
+<anchor xml:id="__prado_helper_8cs_source_1l00159"/>00159 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!response.IsSuccessful)
+<anchor xml:id="__prado_helper_8cs_source_1l00160"/>00160 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__prado_helper_8cs_source_1l00161"/>00161 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Console.WriteLine($<emphasis role="stringliteral">&quot;Error&#32;al&#32;obtener&#32;RDF&#32;para&#32;la&#32;obra:&#32;{response.ErrorMessage}&quot;</emphasis>);
+<anchor xml:id="__prado_helper_8cs_source_1l00162"/>00162 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(<emphasis role="keyword">null</emphasis>,&#32;-1);
+<anchor xml:id="__prado_helper_8cs_source_1l00163"/>00163 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__prado_helper_8cs_source_1l00164"/>00164 
+<anchor xml:id="__prado_helper_8cs_source_1l00165"/>00165 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">try</emphasis>
+<anchor xml:id="__prado_helper_8cs_source_1l00166"/>00166 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__prado_helper_8cs_source_1l00167"/>00167 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Crear&#32;un&#32;XmlDocument&#32;y&#32;cargar&#32;el&#32;contenido&#32;RDF</emphasis>
+<anchor xml:id="__prado_helper_8cs_source_1l00168"/>00168 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;xmlDoc&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;XmlDocument();
+<anchor xml:id="__prado_helper_8cs_source_1l00169"/>00169 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xmlDoc.LoadXml(response.Content);
+<anchor xml:id="__prado_helper_8cs_source_1l00170"/>00170 
+<anchor xml:id="__prado_helper_8cs_source_1l00171"/>00171 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Obtener&#32;el&#32;título&#32;de&#32;la&#32;obra&#32;usando&#32;el&#32;nodo&#32;&apos;ecidoc:p102_E35_p3_has_title_augmented&apos;</emphasis>
+<anchor xml:id="__prado_helper_8cs_source_1l00172"/>00172 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;<link linkend="_class_prado_helper_1aa89eae7a102f15c0e3e507f41315cda6">titulo</link>&#32;=&#32;xmlDoc.SelectSingleNode(<emphasis role="stringliteral">&quot;//ecidoc:p102_E35_p3_has_title_augmented&quot;</emphasis>,&#32;ObtenerNamespaceManager(xmlDoc))?.InnerText;
+<anchor xml:id="__prado_helper_8cs_source_1l00173"/>00173 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<emphasis role="keywordtype">string</emphasis>.IsNullOrEmpty(<link linkend="_class_prado_helper_1aa89eae7a102f15c0e3e507f41315cda6">titulo</link>))
+<anchor xml:id="__prado_helper_8cs_source_1l00174"/>00174 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__prado_helper_8cs_source_1l00175"/>00175 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//Console.WriteLine(&quot;No&#32;se&#32;encontró&#32;un&#32;título&#32;para&#32;la&#32;obra.&quot;);</emphasis>
+<anchor xml:id="__prado_helper_8cs_source_1l00176"/>00176 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(<emphasis role="keyword">null</emphasis>,&#32;0);
+<anchor xml:id="__prado_helper_8cs_source_1l00177"/>00177 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__prado_helper_8cs_source_1l00178"/>00178 
+<anchor xml:id="__prado_helper_8cs_source_1l00179"/>00179 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Obtener&#32;el&#32;primer&#32;&apos;textDate&apos;&#32;y&#32;tratar&#32;de&#32;identificar&#32;si&#32;contiene&#32;un&#32;año&#32;o&#32;un&#32;siglo</emphasis>
+<anchor xml:id="__prado_helper_8cs_source_1l00180"/>00180 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;textDateNode&#32;=&#32;xmlDoc.SelectSingleNode(<emphasis role="stringliteral">&quot;//ecidoc:p62_E52_p79_has_time-span_beginning&quot;</emphasis>,&#32;ObtenerNamespaceManager(xmlDoc))?.InnerText;
+<anchor xml:id="__prado_helper_8cs_source_1l00181"/>00181 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">int</emphasis>&#32;siglo&#32;=&#32;-1;
+<anchor xml:id="__prado_helper_8cs_source_1l00182"/>00182 
+<anchor xml:id="__prado_helper_8cs_source_1l00183"/>00183 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(!<emphasis role="keywordtype">string</emphasis>.IsNullOrEmpty(textDateNode))
+<anchor xml:id="__prado_helper_8cs_source_1l00184"/>00184 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__prado_helper_8cs_source_1l00185"/>00185 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Intentar&#32;extraer&#32;un&#32;año&#32;de&#32;4&#32;dígitos&#32;o&#32;un&#32;siglo</emphasis>
+<anchor xml:id="__prado_helper_8cs_source_1l00186"/>00186 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(<emphasis role="keywordtype">int</emphasis>.TryParse(textDateNode.Substring(0,&#32;4),&#32;out&#32;<emphasis role="keywordtype">int</emphasis>&#32;anio))
+<anchor xml:id="__prado_helper_8cs_source_1l00187"/>00187 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__prado_helper_8cs_source_1l00188"/>00188 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;siglo&#32;=&#32;(anio&#32;/&#32;100)&#32;+&#32;1;&#32;<emphasis role="comment">//&#32;Convertir&#32;año&#32;a&#32;siglo</emphasis>
+<anchor xml:id="__prado_helper_8cs_source_1l00189"/>00189 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__prado_helper_8cs_source_1l00190"/>00190 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">else</emphasis>&#32;<emphasis role="keywordflow">if</emphasis>&#32;(textDateNode.Contains(<emphasis role="stringliteral">&quot;siglo&quot;</emphasis>,&#32;StringComparison.OrdinalIgnoreCase))
+<anchor xml:id="__prado_helper_8cs_source_1l00191"/>00191 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__prado_helper_8cs_source_1l00192"/>00192 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Extraer&#32;el&#32;número&#32;del&#32;siglo&#32;mencionado</emphasis>
+<anchor xml:id="__prado_helper_8cs_source_1l00193"/>00193 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;sigloMatch&#32;=&#32;System.Text.RegularExpressions.Regex.Match(textDateNode,&#32;<emphasis role="stringliteral">@&quot;\d+&quot;</emphasis>);
+<anchor xml:id="__prado_helper_8cs_source_1l00194"/>00194 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(sigloMatch.Success)
+<anchor xml:id="__prado_helper_8cs_source_1l00195"/>00195 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__prado_helper_8cs_source_1l00196"/>00196 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;siglo&#32;=&#32;<emphasis role="keywordtype">int</emphasis>.Parse(sigloMatch.Value);
+<anchor xml:id="__prado_helper_8cs_source_1l00197"/>00197 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__prado_helper_8cs_source_1l00198"/>00198 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__prado_helper_8cs_source_1l00199"/>00199 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__prado_helper_8cs_source_1l00200"/>00200 
+<anchor xml:id="__prado_helper_8cs_source_1l00201"/>00201 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Si&#32;no&#32;se&#32;encuentra&#32;fecha&#32;válida,&#32;devuelve&#32;-1</emphasis>
+<anchor xml:id="__prado_helper_8cs_source_1l00202"/>00202 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">if</emphasis>&#32;(siglo&#32;==&#32;-1)
+<anchor xml:id="__prado_helper_8cs_source_1l00203"/>00203 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__prado_helper_8cs_source_1l00204"/>00204 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Console.WriteLine(<emphasis role="stringliteral">&quot;No&#32;se&#32;pudo&#32;determinar&#32;el&#32;siglo.&quot;</emphasis>);
+<anchor xml:id="__prado_helper_8cs_source_1l00205"/>00205 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__prado_helper_8cs_source_1l00206"/>00206 
+<anchor xml:id="__prado_helper_8cs_source_1l00207"/>00207 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Mostrar&#32;la&#32;información&#32;obtenida</emphasis>
+<anchor xml:id="__prado_helper_8cs_source_1l00208"/>00208 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;Console.WriteLine($&quot;Título&#32;de&#32;la&#32;obra:&#32;{titulo}&quot;);</emphasis>
+<anchor xml:id="__prado_helper_8cs_source_1l00209"/>00209 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="comment">//&#32;&#32;Console.WriteLine($&quot;Siglo&#32;de&#32;la&#32;obra:&#32;{siglo}&quot;);</emphasis>
+<anchor xml:id="__prado_helper_8cs_source_1l00210"/>00210 
+<anchor xml:id="__prado_helper_8cs_source_1l00211"/>00211 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(<link linkend="_class_prado_helper_1aa89eae7a102f15c0e3e507f41315cda6">titulo</link>,&#32;siglo);
+<anchor xml:id="__prado_helper_8cs_source_1l00212"/>00212 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__prado_helper_8cs_source_1l00213"/>00213 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">catch</emphasis>&#32;(Exception&#32;ex)
+<anchor xml:id="__prado_helper_8cs_source_1l00214"/>00214 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<anchor xml:id="__prado_helper_8cs_source_1l00215"/>00215 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Console.WriteLine($<emphasis role="stringliteral">&quot;Error&#32;al&#32;parsear&#32;RDF:&#32;{ex.Message}&quot;</emphasis>);
+<anchor xml:id="__prado_helper_8cs_source_1l00216"/>00216 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;(<emphasis role="keyword">null</emphasis>,&#32;-1);
+<anchor xml:id="__prado_helper_8cs_source_1l00217"/>00217 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<anchor xml:id="__prado_helper_8cs_source_1l00218"/>00218 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__prado_helper_8cs_source_1l00219"/>00219 
+<anchor xml:id="__prado_helper_8cs_source_1l00225"/>00225 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>&#32;<emphasis role="keyword">static</emphasis>&#32;XmlNamespaceManager&#32;ObtenerNamespaceManager(XmlDocument&#32;xmlDoc)
+<anchor xml:id="__prado_helper_8cs_source_1l00226"/>00226 &#32;&#32;&#32;&#32;{
+<anchor xml:id="__prado_helper_8cs_source_1l00227"/>00227 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;nsmgr&#32;=&#32;<emphasis role="keyword">new</emphasis>&#32;XmlNamespaceManager(xmlDoc.NameTable);
+<anchor xml:id="__prado_helper_8cs_source_1l00228"/>00228 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;nsmgr.AddNamespace(<emphasis role="stringliteral">&quot;gnoss&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;http://gnoss.com/gnoss.owl#&quot;</emphasis>);
+<anchor xml:id="__prado_helper_8cs_source_1l00229"/>00229 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;nsmgr.AddNamespace(<emphasis role="stringliteral">&quot;rdf&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;</emphasis>);
+<anchor xml:id="__prado_helper_8cs_source_1l00230"/>00230 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;nsmgr.AddNamespace(<emphasis role="stringliteral">&quot;ecidoc&quot;</emphasis>,&#32;<emphasis role="stringliteral">&quot;http://museodelprado.es/ontologia/ecidoc.owl#&quot;</emphasis>);
+<anchor xml:id="__prado_helper_8cs_source_1l00231"/>00231 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordflow">return</emphasis>&#32;nsmgr;
+<anchor xml:id="__prado_helper_8cs_source_1l00232"/>00232 &#32;&#32;&#32;&#32;}
+<anchor xml:id="__prado_helper_8cs_source_1l00233"/>00233 }
+</programlisting></section>

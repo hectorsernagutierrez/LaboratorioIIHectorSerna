@@ -1,0 +1,211 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="class_registro_animal" kind="class" language="C#" prot="public">
+    <compoundname>RegistroAnimal</compoundname>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_registro_animal_1aa983b61fc24dc46d0286f509cf47e0da" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string?</type>
+        <definition>string? RegistroAnimal.Animal</definition>
+        <argsstring></argsstring>
+        <name>Animal</name>
+        <qualifiedname>RegistroAnimal.Animal</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/usuario/source/repos/trasteo/trasteo/Program.cs" line="18" column="19" bodyfile="C:/Users/usuario/source/repos/trasteo/trasteo/Program.cs" bodystart="18" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="property" id="class_registro_animal_1a17accea9fadc81cf5b0c71988bc61ce5" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string RegistroAnimal.Campo</definition>
+        <argsstring></argsstring>
+        <name>Campo</name>
+        <qualifiedname>RegistroAnimal.Campo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/usuario/source/repos/trasteo/trasteo/Program.cs" line="19" column="19" bodyfile="C:/Users/usuario/source/repos/trasteo/trasteo/Program.cs" bodystart="19" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="property" id="class_registro_animal_1a049357fe61e2b8cd3783b17851c901d3" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string?</type>
+        <definition>string? RegistroAnimal.Informacion</definition>
+        <argsstring></argsstring>
+        <name>Informacion</name>
+        <qualifiedname>RegistroAnimal.Informacion</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/usuario/source/repos/trasteo/trasteo/Program.cs" line="20" column="19" bodyfile="C:/Users/usuario/source/repos/trasteo/trasteo/Program.cs" bodystart="20" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="property" id="class_registro_animal_1a975bdbff2f8667e49b3d3d30b6cfa5ec" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string?</type>
+        <definition>string? RegistroAnimal.Descripcion</definition>
+        <argsstring></argsstring>
+        <name>Descripcion</name>
+        <qualifiedname>RegistroAnimal.Descripcion</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/usuario/source/repos/trasteo/trasteo/Program.cs" line="22" column="19" bodyfile="C:/Users/usuario/source/repos/trasteo/trasteo/Program.cs" bodystart="22" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="property" id="class_registro_animal_1ab307151bdf406ab88c61f331d71c7238" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string?</type>
+        <definition>string? RegistroAnimal.Velocidad</definition>
+        <argsstring></argsstring>
+        <name>Velocidad</name>
+        <qualifiedname>RegistroAnimal.Velocidad</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/usuario/source/repos/trasteo/trasteo/Program.cs" line="23" column="19" bodyfile="C:/Users/usuario/source/repos/trasteo/trasteo/Program.cs" bodystart="23" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="property" id="class_registro_animal_1a521d4346616eed60362ab951e823a60b" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string?</type>
+        <definition>string? RegistroAnimal.Imagen</definition>
+        <argsstring></argsstring>
+        <name>Imagen</name>
+        <qualifiedname>RegistroAnimal.Imagen</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/usuario/source/repos/trasteo/trasteo/Program.cs" line="24" column="19" bodyfile="C:/Users/usuario/source/repos/trasteo/trasteo/Program.cs" bodystart="24" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="property" id="class_registro_animal_1afe2a501a69ee8c4ad75ec981cbf1fd40" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string?</type>
+        <definition>string? RegistroAnimal.NombreCientifico</definition>
+        <argsstring></argsstring>
+        <name>NombreCientifico</name>
+        <qualifiedname>RegistroAnimal.NombreCientifico</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/usuario/source/repos/trasteo/trasteo/Program.cs" line="25" column="19" bodyfile="C:/Users/usuario/source/repos/trasteo/trasteo/Program.cs" bodystart="25" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="property" id="class_registro_animal_1a2e557c037d91f06fb65250c64f2d7944" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string?</type>
+        <definition>string? RegistroAnimal.LinkWikidata</definition>
+        <argsstring></argsstring>
+        <name>LinkWikidata</name>
+        <qualifiedname>RegistroAnimal.LinkWikidata</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/usuario/source/repos/trasteo/trasteo/Program.cs" line="26" column="19" bodyfile="C:/Users/usuario/source/repos/trasteo/trasteo/Program.cs" bodystart="26" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="property" id="class_registro_animal_1a03f8e9e6215d8516f0bf9b6d8ab4e0b7" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string RegistroAnimal.Familia</definition>
+        <argsstring></argsstring>
+        <name>Familia</name>
+        <qualifiedname>RegistroAnimal.Familia</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/usuario/source/repos/trasteo/trasteo/Program.cs" line="27" column="19" bodyfile="C:/Users/usuario/source/repos/trasteo/trasteo/Program.cs" bodystart="27" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="property" id="class_registro_animal_1a52b265a3684a2b19deb8eccc23110fa1" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string[]</type>
+        <definition>string [] RegistroAnimal.ObrasPrado</definition>
+        <argsstring></argsstring>
+        <name>ObrasPrado</name>
+        <qualifiedname>RegistroAnimal.ObrasPrado</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/usuario/source/repos/trasteo/trasteo/Program.cs" line="28" column="19" bodyfile="C:/Users/usuario/source/repos/trasteo/trasteo/Program.cs" bodystart="28" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="property" id="class_registro_animal_1a26369bbabfff0d30a00dbe24f66fde9a" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>int?</type>
+        <definition>int? RegistroAnimal.numObra</definition>
+        <argsstring></argsstring>
+        <name>numObra</name>
+        <qualifiedname>RegistroAnimal.numObra</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/usuario/source/repos/trasteo/trasteo/Program.cs" line="29" column="16" bodyfile="C:/Users/usuario/source/repos/trasteo/trasteo/Program.cs" bodystart="29" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="property" id="class_registro_animal_1a55f6ee1de2f09b206b3ef2175563d56c" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string?</type>
+        <definition>string? RegistroAnimal.sigloPop</definition>
+        <argsstring></argsstring>
+        <name>sigloPop</name>
+        <qualifiedname>RegistroAnimal.sigloPop</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/usuario/source/repos/trasteo/trasteo/Program.cs" line="31" column="19" bodyfile="C:/Users/usuario/source/repos/trasteo/trasteo/Program.cs" bodystart="31" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="property" id="class_registro_animal_1afa59dd88f82c99b8c77191cb3cb44e9e" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>Dictionary&lt; string, string?&gt;</type>
+        <definition>Dictionary&lt;string, string?&gt; RegistroAnimal.CamposAdicionales</definition>
+        <argsstring></argsstring>
+        <name>CamposAdicionales</name>
+        <qualifiedname>RegistroAnimal.CamposAdicionales</qualifiedname>
+        <initializer>= new Dictionary&lt;string, string?&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/usuario/source/repos/trasteo/trasteo/Program.cs" line="32" column="23" bodyfile="C:/Users/usuario/source/repos/trasteo/trasteo/Program.cs" bodystart="32" bodyend="32"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/usuario/source/repos/trasteo/trasteo/Program.cs" line="16" column="7" bodyfile="C:/Users/usuario/source/repos/trasteo/trasteo/Program.cs" bodystart="17" bodyend="35"/>
+    <listofallmembers>
+      <member refid="class_registro_animal_1aa983b61fc24dc46d0286f509cf47e0da" prot="public" virt="non-virtual"><scope>RegistroAnimal</scope><name>Animal</name></member>
+      <member refid="class_registro_animal_1a17accea9fadc81cf5b0c71988bc61ce5" prot="public" virt="non-virtual"><scope>RegistroAnimal</scope><name>Campo</name></member>
+      <member refid="class_registro_animal_1afa59dd88f82c99b8c77191cb3cb44e9e" prot="public" virt="non-virtual"><scope>RegistroAnimal</scope><name>CamposAdicionales</name></member>
+      <member refid="class_registro_animal_1a975bdbff2f8667e49b3d3d30b6cfa5ec" prot="public" virt="non-virtual"><scope>RegistroAnimal</scope><name>Descripcion</name></member>
+      <member refid="class_registro_animal_1a03f8e9e6215d8516f0bf9b6d8ab4e0b7" prot="public" virt="non-virtual"><scope>RegistroAnimal</scope><name>Familia</name></member>
+      <member refid="class_registro_animal_1a521d4346616eed60362ab951e823a60b" prot="public" virt="non-virtual"><scope>RegistroAnimal</scope><name>Imagen</name></member>
+      <member refid="class_registro_animal_1a049357fe61e2b8cd3783b17851c901d3" prot="public" virt="non-virtual"><scope>RegistroAnimal</scope><name>Informacion</name></member>
+      <member refid="class_registro_animal_1a2e557c037d91f06fb65250c64f2d7944" prot="public" virt="non-virtual"><scope>RegistroAnimal</scope><name>LinkWikidata</name></member>
+      <member refid="class_registro_animal_1afe2a501a69ee8c4ad75ec981cbf1fd40" prot="public" virt="non-virtual"><scope>RegistroAnimal</scope><name>NombreCientifico</name></member>
+      <member refid="class_registro_animal_1a26369bbabfff0d30a00dbe24f66fde9a" prot="public" virt="non-virtual"><scope>RegistroAnimal</scope><name>numObra</name></member>
+      <member refid="class_registro_animal_1a52b265a3684a2b19deb8eccc23110fa1" prot="public" virt="non-virtual"><scope>RegistroAnimal</scope><name>ObrasPrado</name></member>
+      <member refid="class_registro_animal_1a55f6ee1de2f09b206b3ef2175563d56c" prot="public" virt="non-virtual"><scope>RegistroAnimal</scope><name>sigloPop</name></member>
+      <member refid="class_registro_animal_1ab307151bdf406ab88c61f331d71c7238" prot="public" virt="non-virtual"><scope>RegistroAnimal</scope><name>Velocidad</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

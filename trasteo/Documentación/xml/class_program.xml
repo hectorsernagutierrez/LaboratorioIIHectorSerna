@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="class_program" kind="class" language="C#" prot="public">
+    <compoundname>Program</compoundname>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_program_1ad22b0f776312e09174fc36a1e4bade60" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Program.Main</definition>
+        <argsstring>()</argsstring>
+        <name>Main</name>
+        <qualifiedname>Program.Main</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/usuario/source/repos/trasteo/trasteo/Program.cs" line="52" column="17" bodyfile="C:/Users/usuario/source/repos/trasteo/trasteo/Program.cs" bodystart="52" bodyend="354"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_program_1a93be828ac5129d9f77ed3022e5d8d380" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool Program.IsValidUrl</definition>
+        <argsstring>(string url, string patron)</argsstring>
+        <name>IsValidUrl</name>
+        <qualifiedname>Program.IsValidUrl</qualifiedname>
+        <param>
+          <type>string</type>
+          <declname>url</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>patron</declname>
+        </param>
+        <briefdescription>
+<para>Devuelve true si el URL es correcto. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>url</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>string</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>bool</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/usuario/source/repos/trasteo/trasteo/Program.cs" line="361" column="24" bodyfile="C:/Users/usuario/source/repos/trasteo/trasteo/Program.cs" bodystart="361" bodyend="367"/>
+      </memberdef>
+      <memberdef kind="function" id="class_program_1af31a5c8f046291c6c33d776d7f023dca" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>static string Program.GenerarWikiDataURL</definition>
+        <argsstring>(string url, string animal)</argsstring>
+        <name>GenerarWikiDataURL</name>
+        <qualifiedname>Program.GenerarWikiDataURL</qualifiedname>
+        <param>
+          <type>string</type>
+          <declname>url</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>animal</declname>
+        </param>
+        <briefdescription>
+<para>Genera el contenido del campo wikidata. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>url</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>animal</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/usuario/source/repos/trasteo/trasteo/Program.cs" line="374" column="26" bodyfile="C:/Users/usuario/source/repos/trasteo/trasteo/Program.cs" bodystart="374" bodyend="387"/>
+      </memberdef>
+      <memberdef kind="function" id="class_program_1a55789a418a83b5ad06c0e2130bd52649" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>List&lt; <ref refid="class_registro_animal" kindref="compound">RegistroAnimal</ref> &gt;</type>
+        <definition>static List&lt; RegistroAnimal &gt; Program.NormalizacionAnimales</definition>
+        <argsstring>(List&lt; RegistroAnimal &gt; records)</argsstring>
+        <name>NormalizacionAnimales</name>
+        <qualifiedname>Program.NormalizacionAnimales</qualifiedname>
+        <param>
+          <type>List&lt; <ref refid="class_registro_animal" kindref="compound">RegistroAnimal</ref> &gt;</type>
+          <declname>records</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>records</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/usuario/source/repos/trasteo/trasteo/Program.cs" line="395" column="28" bodyfile="C:/Users/usuario/source/repos/trasteo/trasteo/Program.cs" bodystart="395" bodyend="419"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/usuario/source/repos/trasteo/trasteo/Program.cs" line="50" column="1" bodyfile="C:/Users/usuario/source/repos/trasteo/trasteo/Program.cs" bodystart="51" bodyend="420"/>
+    <listofallmembers>
+      <member refid="class_program_1af31a5c8f046291c6c33d776d7f023dca" prot="public" virt="non-virtual"><scope>Program</scope><name>GenerarWikiDataURL</name></member>
+      <member refid="class_program_1a93be828ac5129d9f77ed3022e5d8d380" prot="public" virt="non-virtual"><scope>Program</scope><name>IsValidUrl</name></member>
+      <member refid="class_program_1ad22b0f776312e09174fc36a1e4bade60" prot="private" virt="non-virtual"><scope>Program</scope><name>Main</name></member>
+      <member refid="class_program_1a55789a418a83b5ad06c0e2130bd52649" prot="public" virt="non-virtual"><scope>Program</scope><name>NormalizacionAnimales</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

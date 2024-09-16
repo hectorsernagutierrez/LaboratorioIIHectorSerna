@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.7" xml:lang="en-US">
+  <compound refid="class_prado_helper" kind="class"><name>PradoHelper</name>
+    <member refid="class_prado_helper_1a62de674a8533c4ff73e5003138bdff76" kind="variable"><name>numeroObras</name></member>
+    <member refid="class_prado_helper_1a08b98e5efea1da3a5fe08154464705ac" kind="variable"><name>obrasNombres</name></member>
+    <member refid="class_prado_helper_1aa89eae7a102f15c0e3e507f41315cda6" kind="variable"><name>titulo</name></member>
+    <member refid="class_prado_helper_1a6be3c130718e6cf97e1c6a4b6e2cef36" kind="function"><name>ObtenerInfoPrado</name></member>
+    <member refid="class_prado_helper_1a2db0117b1bcb916f436338e79c4fda77" kind="function"><name>ObtenerRDFDelPrado</name></member>
+    <member refid="class_prado_helper_1a280f245dd7aa78f62b82023cce3a1289" kind="function"><name>ParsearRDFObras</name></member>
+    <member refid="class_prado_helper_1a7c342414176459fbf1d4c20e6657172c" kind="function"><name>BuscarTituloYSigloDeObra</name></member>
+    <member refid="class_prado_helper_1a1bfa84a6d2fc5700c817b9914b59a481" kind="function"><name>ObtenerNamespaceManager</name></member>
+  </compound>
+  <compound refid="class_program" kind="class"><name>Program</name>
+    <member refid="class_program_1ad22b0f776312e09174fc36a1e4bade60" kind="function"><name>Main</name></member>
+    <member refid="class_program_1a93be828ac5129d9f77ed3022e5d8d380" kind="function"><name>IsValidUrl</name></member>
+    <member refid="class_program_1af31a5c8f046291c6c33d776d7f023dca" kind="function"><name>GenerarWikiDataURL</name></member>
+    <member refid="class_program_1a55789a418a83b5ad06c0e2130bd52649" kind="function"><name>NormalizacionAnimales</name></member>
+  </compound>
+  <compound refid="class_registro_animal" kind="class"><name>RegistroAnimal</name>
+    <member refid="class_registro_animal_1aa983b61fc24dc46d0286f509cf47e0da" kind="property"><name>Animal</name></member>
+    <member refid="class_registro_animal_1a17accea9fadc81cf5b0c71988bc61ce5" kind="property"><name>Campo</name></member>
+    <member refid="class_registro_animal_1a049357fe61e2b8cd3783b17851c901d3" kind="property"><name>Informacion</name></member>
+    <member refid="class_registro_animal_1a975bdbff2f8667e49b3d3d30b6cfa5ec" kind="property"><name>Descripcion</name></member>
+    <member refid="class_registro_animal_1ab307151bdf406ab88c61f331d71c7238" kind="property"><name>Velocidad</name></member>
+    <member refid="class_registro_animal_1a521d4346616eed60362ab951e823a60b" kind="property"><name>Imagen</name></member>
+    <member refid="class_registro_animal_1afe2a501a69ee8c4ad75ec981cbf1fd40" kind="property"><name>NombreCientifico</name></member>
+    <member refid="class_registro_animal_1a2e557c037d91f06fb65250c64f2d7944" kind="property"><name>LinkWikidata</name></member>
+    <member refid="class_registro_animal_1a03f8e9e6215d8516f0bf9b6d8ab4e0b7" kind="property"><name>Familia</name></member>
+    <member refid="class_registro_animal_1a52b265a3684a2b19deb8eccc23110fa1" kind="property"><name>ObrasPrado</name></member>
+    <member refid="class_registro_animal_1a26369bbabfff0d30a00dbe24f66fde9a" kind="property"><name>numObra</name></member>
+    <member refid="class_registro_animal_1a55f6ee1de2f09b206b3ef2175563d56c" kind="property"><name>sigloPop</name></member>
+    <member refid="class_registro_animal_1afa59dd88f82c99b8c77191cb3cb44e9e" kind="property"><name>CamposAdicionales</name></member>
+  </compound>
+  <compound refid="class_registro_animal_map" kind="class"><name>RegistroAnimalMap</name>
+    <member refid="class_registro_animal_map_1a0f6a4ef74746adc95838490f8a4091c6" kind="function"><name>RegistroAnimalMap</name></member>
+  </compound>
+  <compound refid="classtrasteo_1_1_wikidata_helper" kind="class"><name>trasteo::WikidataHelper</name>
+    <member refid="classtrasteo_1_1_wikidata_helper_1a48ba28d60907bd481818a8db1874d796" kind="variable"><name>client</name></member>
+    <member refid="classtrasteo_1_1_wikidata_helper_1a8445ffcb1338c1411600d27fed52c793" kind="variable"><name>familia</name></member>
+    <member refid="classtrasteo_1_1_wikidata_helper_1a09297f6b8f2b9dc4ccbd3e3caca76736" kind="function"><name>ObtenerFamiliaYPropiedades</name></member>
+    <member refid="classtrasteo_1_1_wikidata_helper_1a40d93caab49ef93721e60e7cbf090185" kind="function"><name>ObtenerNombreCientifico</name></member>
+  </compound>
+  <compound refid="namespace_csv_helper" kind="namespace"><name>CsvHelper</name>
+  </compound>
+  <compound refid="namespace_csv_helper_1_1_configuration" kind="namespace"><name>CsvHelper::Configuration</name>
+  </compound>
+  <compound refid="namespaceglobal_1_1_system" kind="namespace"><name>global::System</name>
+  </compound>
+  <compound refid="namespaceglobal_1_1_system_1_1_collections_1_1_generic" kind="namespace"><name>global::System::Collections::Generic</name>
+  </compound>
+  <compound refid="namespaceglobal_1_1_system_1_1_i_o" kind="namespace"><name>global::System::IO</name>
+  </compound>
+  <compound refid="namespaceglobal_1_1_system_1_1_linq" kind="namespace"><name>global::System::Linq</name>
+  </compound>
+  <compound refid="namespaceglobal_1_1_system_1_1_net_1_1_http" kind="namespace"><name>global::System::Net::Http</name>
+  </compound>
+  <compound refid="namespaceglobal_1_1_system_1_1_threading" kind="namespace"><name>global::System::Threading</name>
+  </compound>
+  <compound refid="namespaceglobal_1_1_system_1_1_threading_1_1_tasks" kind="namespace"><name>global::System::Threading::Tasks</name>
+  </compound>
+  <compound refid="namespace_microsoft_1_1_win32" kind="namespace"><name>Microsoft::Win32</name>
+  </compound>
+  <compound refid="namespace_rest_sharp" kind="namespace"><name>RestSharp</name>
+  </compound>
+  <compound refid="namespace_system" kind="namespace"><name>System</name>
+  </compound>
+  <compound refid="namespace_system_1_1_collections_1_1_generic" kind="namespace"><name>System::Collections::Generic</name>
+  </compound>
+  <compound refid="namespace_system_1_1_formats_1_1_asn1" kind="namespace"><name>System::Formats::Asn1</name>
+  </compound>
+  <compound refid="namespace_system_1_1_globalization" kind="namespace"><name>System::Globalization</name>
+  </compound>
+  <compound refid="namespace_system_1_1_i_o" kind="namespace"><name>System::IO</name>
+  </compound>
+  <compound refid="namespace_system_1_1_linq" kind="namespace"><name>System::Linq</name>
+  </compound>
+  <compound refid="namespace_system_1_1_reflection" kind="namespace"><name>System::Reflection</name>
+  </compound>
+  <compound refid="namespace_system_1_1_text" kind="namespace"><name>System::Text</name>
+  </compound>
+  <compound refid="namespace_system_1_1_text_1_1_regular_expressions" kind="namespace"><name>System::Text::RegularExpressions</name>
+  </compound>
+  <compound refid="namespace_system_1_1_threading_1_1_tasks" kind="namespace"><name>System::Threading::Tasks</name>
+  </compound>
+  <compound refid="namespace_system_1_1_xml" kind="namespace"><name>System::Xml</name>
+  </compound>
+  <compound refid="namespace_system_1_1_xml_1_1_serialization" kind="namespace"><name>System::Xml::Serialization</name>
+  </compound>
+  <compound refid="namespacetrasteo" kind="namespace"><name>trasteo</name>
+  </compound>
+  <compound refid="_8_n_e_t_core_app_00_version_0av6_80_8_assembly_attributes_8cs" kind="file"><name>.NETCoreApp,Version=v6.0.AssemblyAttributes.cs</name>
+  </compound>
+  <compound refid="_laboratorio_i_i_8_assembly_info_8cs" kind="file"><name>LaboratorioII.AssemblyInfo.cs</name>
+  </compound>
+  <compound refid="_laboratorio_i_i_8_global_usings_8g_8cs" kind="file"><name>LaboratorioII.GlobalUsings.g.cs</name>
+  </compound>
+  <compound refid="trasteo_8_assembly_info_8cs" kind="file"><name>trasteo.AssemblyInfo.cs</name>
+  </compound>
+  <compound refid="trasteo_8_global_usings_8g_8cs" kind="file"><name>trasteo.GlobalUsings.g.cs</name>
+  </compound>
+  <compound refid="_prado_helper_8cs" kind="file"><name>PradoHelper.cs</name>
+  </compound>
+  <compound refid="_program_8cs" kind="file"><name>Program.cs</name>
+  </compound>
+  <compound refid="_wiki_data_helper_8cs" kind="file"><name>WikiDataHelper.cs</name>
+  </compound>
+  <compound refid="dir_a71c3b2ad23b9ff58220dd012d201987" kind="dir"><name>C:/Users/usuario/source/repos/trasteo/trasteo/obj/Debug</name>
+  </compound>
+  <compound refid="dir_7212c827820ef56532d3599ed27e3aff" kind="dir"><name>C:/Users/usuario/source/repos/trasteo/trasteo/obj/Debug/net6.0</name>
+  </compound>
+  <compound refid="dir_43724e81dd40e09f32417973865cdd64" kind="dir"><name>C:/Users/usuario/source/repos/trasteo/trasteo/obj</name>
+  </compound>
+</doxygenindex>

@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_dir_7212c827820ef56532d3599ed27e3aff" xml:lang="en-US">
+<title>C:/Users/usuario/source/repos/trasteo/trasteo/obj/Debug/net6.0 Directory Reference</title>
+<indexterm><primary>C:/Users/usuario/source/repos/trasteo/trasteo/obj/Debug/net6.0 Directory Reference</primary></indexterm>
+Directory dependency graph for net6.0:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="dir_7212c827820ef56532d3599ed27e3aff_dep.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Files    </title>
+        <itemizedlist>
+            <listitem><para>file <link linkend="__8_n_e_t_core_app_00_version_0av6_80_8_assembly_attributes_8cs">.NETCoreApp,Version=v6.0.AssemblyAttributes.cs</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__laboratorio_i_i_8_assembly_info_8cs">LaboratorioII.AssemblyInfo.cs</link></para>
+</listitem>
+            <listitem><para>file <link linkend="__laboratorio_i_i_8_global_usings_8g_8cs">LaboratorioII.GlobalUsings.g.cs</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_trasteo_8_assembly_info_8cs">trasteo.AssemblyInfo.cs</link></para>
+</listitem>
+            <listitem><para>file <link linkend="_trasteo_8_global_usings_8g_8cs">trasteo.GlobalUsings.g.cs</link></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

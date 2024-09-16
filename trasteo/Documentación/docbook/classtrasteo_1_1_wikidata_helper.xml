@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classtrasteo_1_1_wikidata_helper" xml:lang="en-US">
+<title>trasteo.WikidataHelper Class Reference</title>
+<indexterm><primary>trasteo.WikidataHelper</primary></indexterm>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static string string familiaDescr <link linkend="_classtrasteo_1_1_wikidata_helper_1a09297f6b8f2b9dc4ccbd3e3caca76736">ObtenerFamiliaYPropiedades</link> (string wikidataUrl)</para>
+</listitem>
+            <listitem><para>static string <link linkend="_classtrasteo_1_1_wikidata_helper_1a40d93caab49ef93721e60e7cbf090185">ObtenerNombreCientifico</link> (string wikidataUrl)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>static string <link linkend="_classtrasteo_1_1_wikidata_helper_1a8445ffcb1338c1411600d27fed52c793">familia</link></para>
+
+<para>Obtiene la familia y las propiedades de un animal desde Wikidata basado en su identificador quye empieaz cn Q. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line <link linkend="__wiki_data_helper_8cs_source_1l00014">14</link> of file <link linkend="__wiki_data_helper_8cs_source">WikiDataHelper.cs</link>.</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classtrasteo_1_1_wikidata_helper_1a09297f6b8f2b9dc4ccbd3e3caca76736"/><section>
+    <title>ObtenerFamiliaYPropiedades()</title>
+<indexterm><primary>ObtenerFamiliaYPropiedades</primary><secondary>trasteo.WikidataHelper</secondary></indexterm>
+<indexterm><primary>trasteo.WikidataHelper</primary><secondary>ObtenerFamiliaYPropiedades</secondary></indexterm>
+<para><computeroutput>static string string familiaDescr trasteo.WikidataHelper.ObtenerFamiliaYPropiedades (string wikidataUrl)<computeroutput>[static]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__wiki_data_helper_8cs_source_1l00024">24</link> of file <link linkend="__wiki_data_helper_8cs_source">WikiDataHelper.cs</link>.</para>
+</section>
+<anchor xml:id="_classtrasteo_1_1_wikidata_helper_1a40d93caab49ef93721e60e7cbf090185"/><section>
+    <title>ObtenerNombreCientifico()</title>
+<indexterm><primary>ObtenerNombreCientifico</primary><secondary>trasteo.WikidataHelper</secondary></indexterm>
+<indexterm><primary>trasteo.WikidataHelper</primary><secondary>ObtenerNombreCientifico</secondary></indexterm>
+<para><computeroutput>static string trasteo.WikidataHelper.ObtenerNombreCientifico (string wikidataUrl)<computeroutput>[static]</computeroutput></computeroutput></para>
+<para>Obtiene el nombre científico de un animal desde Wikidata basado en su identificador Q.</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>wikidataUrl</entry><entry>
+<para>La URL de la entidad en Wikidata.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>El nombre científico del animal, o una cadena vacía si no se encuentra.</para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__wiki_data_helper_8cs_source_1l00096">96</link> of file <link linkend="__wiki_data_helper_8cs_source">WikiDataHelper.cs</link>.</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_classtrasteo_1_1_wikidata_helper_1a8445ffcb1338c1411600d27fed52c793"/><section>
+    <title>familia</title>
+<indexterm><primary>familia</primary><secondary>trasteo.WikidataHelper</secondary></indexterm>
+<indexterm><primary>trasteo.WikidataHelper</primary><secondary>familia</secondary></indexterm>
+<para><computeroutput>string trasteo.WikidataHelper.familia<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Obtiene la familia y las propiedades de un animal desde Wikidata basado en su identificador quye empieaz cn Q. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>wikidataUrl</entry><entry>
+<para>La URL de la entidad en Wikidata.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Una tupla con el nombre de la familia y las propiedades concatenadas.</para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__wiki_data_helper_8cs_source_1l00024">24</link> of file <link linkend="__wiki_data_helper_8cs_source">WikiDataHelper.cs</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+C:/Users/usuario/source/repos/trasteo/trasteo/<link linkend="__wiki_data_helper_8cs">WikiDataHelper.cs</link></section>
+</section>

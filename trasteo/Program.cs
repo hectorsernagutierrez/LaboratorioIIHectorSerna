@@ -9,6 +9,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Xml.Serialization;
+using trasteo;
+
 
 public class RegistroAnimal
 {
@@ -70,7 +73,9 @@ class Program
         using (var csv = new CsvReader(reader, config))
         {
             csv.Context.RegisterClassMap<RegistroAnimalMap>();
-            var records = csv.GetRecords<RegistroAnimal>().ToList();
+            var recordsSinNormalizar = csv.GetRecords<RegistroAnimal>().ToList();
+
+            var records = NormalizacionAnimales(recordsSinNormalizar);
 
             // Listas para detectar duplicados o inconsistencias
             var urlList = new HashSet<string>();
@@ -182,10 +187,21 @@ class Program
                                                                switch (registro.Campo?.ToLower())
                                                                {
                                                                    case "link wikidata":
-                                                                       if (string.IsNullOrEmpty(animalInfo.LinkWikidata) && IsValidUrl(registro.Informacion, @"^(http|https)://www\.wikidata\.org\/wiki\/.+$"))
+                                                                       
+                                                                       if (string.IsNullOrEmpty(animalInfo.LinkWikidata))
                                                                        {
-                                                                           animalInfo.LinkWikidata = registro.Informacion;
+                                                                           // Verificar si la URL es válida, si no lo es, corregirla
+                                                                           if (IsValidUrl(registro.Informacion, @"^(http|https)://www\.wikidata\.org\/wiki\/.+$"))
+                                                                           {
+                                                                               animalInfo.LinkWikidata = registro.Informacion;
+                                                                           }
+                                                                           else
+                                                                           {
+                                                                               animalInfo.LinkWikidata = GenerarWikiDataURL(registro.Informacion, registro.Animal);
+                                                                               Console.WriteLine($"Corrigiendo URL de Wikidata para {registro.Animal}: {animalInfo.LinkWikidata}");
+                                                                           }
                                                                        }
+                                                                       
                                                                        break;
 
                                                                    case "imagen":
@@ -196,33 +212,36 @@ class Program
                                                                        break;
 
                                                                    case "descripción":
-                                                                       //if (animalDescripcion.ContainsKey(registro.Animal))
-                                                                       //{
-                                                                       //    animalInfo.Descripcion = animalDescripcion[registro.Animal];
-                                                                       //}
+                                                                       
+
                                                                        if (string.IsNullOrEmpty(animalInfo.Descripcion) && registro.Informacion != null)
                                                                        {// animalInfo.Descripcion = registro.Informacion;
-
-                                                                           // Guardar la descripción correcta para el animal
-                                                                           if (animalDescripcion.ContainsKey(registro.Animal))
+                                                                           if (registro.Informacion.Contains(registro.Animal, StringComparison.OrdinalIgnoreCase))
                                                                            {
-                                                                               animalDescripcion[registro.Animal] = registro.Informacion;
+
+                                                                               // Guardar la descripción correcta para el animal
+                                                                               if (!animalDescripcion.ContainsKey(registro.Animal))
+                                                                               {
+                                                                                   animalDescripcion[registro.Animal] = registro.Informacion;
+                                                                               }
+                                                                               
                                                                            }
 
-                                                                       
-                                                                       else
-                                                                       {
-                                                                           // Buscar el animal correcto al que debería pertenecer esta descripción
-                                                                           var possibleAnimals = records
-                                                                               .Where(r => r.Animal != null && registro.Informacion.Contains(r.Animal, StringComparison.OrdinalIgnoreCase))
-                                                                               .Select(r => r.Animal)
-                                                                               .ToList();
-                                                                               // Si encontramos solo un animal posible, reasignamos la descripción a ese animal
-                                                                               Console.WriteLine($"Reasignando descripción de {registro.Animal} a {possibleAnimals.First()}");
-                                                                               if (!animalDescripcion.ContainsKey(possibleAnimals.First())){
-                                                                                   animalDescripcion.Add(possibleAnimals.First(), registro.Informacion); }
+
+                                                                           else
+                                                                           {
+                                                                               var possibleAnimals = records
+                                                                                   .Where(r => r.Animal != null && registro.Informacion.Contains(r.Animal, StringComparison.OrdinalIgnoreCase)&& !animalDescripcion.ContainsKey(r.Animal))
+                                                                                   .Select(r => r.Animal)
+                                                                                   .ToList();
                                                                                
-                                                                       }
+                                                                               Console.WriteLine($"Reasignando descripción de {registro.Animal} a {possibleAnimals.First()}");
+                                                                               if (!animalDescripcion.ContainsKey(possibleAnimals.First()))
+                                                                               {
+                                                                                   animalDescripcion.Add(possibleAnimals.First(), registro.Informacion);
+                                                                               }
+
+                                                                           }
                                                                }
                                                                        break;
 
@@ -232,6 +251,14 @@ class Program
                                                                            animalInfo.Velocidad = registro.Informacion;
                                                                        }
                                                                        break;
+                                                                   case "nombre común":
+                                                                       if (string.IsNullOrEmpty(animalInfo.NombreCientifico))
+                                                                       {
+                                                                           animalInfo.NombreCientifico = registro.Informacion;
+                                                                       }
+                                                                       break;
+
+
 
                                                                    default:
                                                                        // Campos adicionales que no están mapeados explícitamente
@@ -267,6 +294,7 @@ class Program
                 csvOutput.WriteField("Velocidad");
                 csvOutput.WriteField("Nombre Cientifico");
                 csvOutput.WriteField("Familia");
+                csvOutput.WriteField("FamiliaDescr");
                 csvOutput.WriteField("Numero Obras");
                 csvOutput.WriteField("Obras Prado");
                 csvOutput.WriteField("Siglo Más popular");
@@ -286,9 +314,26 @@ class Program
                     csvOutput.WriteField(animal.Imagen);
                     csvOutput.WriteField(animal.LinkWikidata);
                     csvOutput.WriteField(animal.Velocidad);
-                    csvOutput.WriteField(animal.NombreCientifico);
+                    string wikicientifico = WikidataHelper.ObtenerNombreCientifico(animal.LinkWikidata);
+                    //Notar que aqui con haber escrito el nombre cientifico solo desde wikidata servia pero de esta manera hcemos la comprobación pedida
+                    if (wikicientifico.Equals(animal.NombreCientifico))
+                    {
+                        Console.WriteLine($"El nombre cientifico no coincide con el de wikidata {wikicientifico} vs {animal.NombreCientifico}");
+                        
+                        csvOutput.WriteField(wikicientifico);
+                    }
+                    else
+                    {
 
-                    // Escribir los campos adicionales
+                        csvOutput.WriteField(!string.IsNullOrEmpty(animal.NombreCientifico) ? animal.NombreCientifico :wikicientifico);
+                    }
+                    var (familia, familiaDescr) = WikidataHelper.ObtenerFamiliaYPropiedades(animal.LinkWikidata);
+                    csvOutput.WriteField(familia);
+                    csvOutput.WriteField(familiaDescr);
+                    var (numeroObras, obrasNombres, sigloMasPopular) = PradoHelper.ObtenerInfoPrado(animal.Animal.ToLower());
+                    csvOutput.WriteField(numeroObras);
+                    csvOutput.WriteField(obrasNombres);
+                    csvOutput.WriteField(sigloMasPopular);
                     foreach (var columna in columnasAdicionales)
                     {
                         if (animal.CamposAdicionales.TryGetValue(columna, out var valor))
@@ -297,7 +342,7 @@ class Program
                         }
                         else
                         {
-                            csvOutput.WriteField(""); // Si no hay valor para la columna, dejar en blanco
+                            csvOutput.WriteField(""); 
                         }
                     }
                     csvOutput.NextRecord();
@@ -313,11 +358,63 @@ class Program
     /// </summary>
     /// <param name="url">string</param>
     /// <returns>bool</returns>
-    public static bool IsValidUrl(string url,string pattern)
+    public static bool IsValidUrl(string url,string patron)
     {
         if (string.IsNullOrEmpty(url))
             return false;//Uso Regex para generar un patron de url
        
-        return Regex.IsMatch(url, pattern);
+        return Regex.IsMatch(url, patron);
+    }
+    /// <summary>
+    /// Genera el contenido del campo wikidata
+    /// </summary>
+    /// <param name="url"></param>
+    /// <param name="animal"></param>
+    /// <returns></returns>
+    public static string GenerarWikiDataURL(string url, string animal)
+    {
+        // Buscar si el código de la entidad empieza por 'Q' y extraerlo
+        var match = Regex.Match(url, @"Q\d+");
+        if (match.Success)
+        {
+            return $"https://www.wikidata.org/wiki/{match.Value}";
+        }
+        else
+        {
+            Console.WriteLine($"No se pudo corregir la URL de Wikidata para {animal}");
+            return $"https://www.wikidata.org/wiki/Q";
+        }
+    }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="records"></param>
+        /// <returns></returns>
+        public static List<RegistroAnimal> NormalizacionAnimales(List<RegistroAnimal> records)
+    {
+        var animalSynonyms = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase)
+        {
+            { "burro", "asno" },  
+            { "asno", "asno" },
+            {"camaleón","camaleon" }
+            
+        };
+        var registrosNormalizados = new List<RegistroAnimal>();
+
+        
+        foreach (var record in records)
+        {
+            if (record.Animal != null && animalSynonyms.ContainsKey(record.Animal))
+            {                
+                record.Animal = animalSynonyms[record.Animal];
+            }
+                        
+            registrosNormalizados.Add(record);
+        }
+        return registrosNormalizados;
+
+
     }
 }

@@ -1,0 +1,254 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="class_prado_helper" kind="class" language="C#" prot="public">
+    <compoundname>PradoHelper</compoundname>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_prado_helper_1a62de674a8533c4ff73e5003138bdff76" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int PradoHelper.numeroObras</definition>
+        <argsstring></argsstring>
+        <name>numeroObras</name>
+        <qualifiedname>PradoHelper.numeroObras</qualifiedname>
+        <briefdescription>
+<para>Método auxiliar para obtener el número total de obras, sus nombres y el siglo más popular para un animal. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>animal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>El nombre del animal.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Una tupla con el número de obras, el nombre de todas las obras y el siglo más popular.</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/usuario/source/repos/trasteo/trasteo/PradoHelper.cs" line="17" column="23" bodyfile="C:/Users/usuario/source/repos/trasteo/trasteo/PradoHelper.cs" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_prado_helper_1a08b98e5efea1da3a5fe08154464705ac" prot="public" static="yes" mutable="no">
+        <type>int string</type>
+        <definition>int string PradoHelper.obrasNombres</definition>
+        <argsstring></argsstring>
+        <name>obrasNombres</name>
+        <qualifiedname>PradoHelper.obrasNombres</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/usuario/source/repos/trasteo/trasteo/PradoHelper.cs" line="17" column="42" bodyfile="C:/Users/usuario/source/repos/trasteo/trasteo/PradoHelper.cs" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_prado_helper_1aa89eae7a102f15c0e3e507f41315cda6" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string PradoHelper.titulo</definition>
+        <argsstring></argsstring>
+        <name>titulo</name>
+        <qualifiedname>PradoHelper.titulo</qualifiedname>
+        <briefdescription>
+<para>Método auxiliar para buscar el siglo de una obra basada en su URL. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>obraUrl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>URL de la obra.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>El siglo de la obra.</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/usuario/source/repos/trasteo/trasteo/PradoHelper.cs" line="147" column="26" bodyfile="C:/Users/usuario/source/repos/trasteo/trasteo/PradoHelper.cs" bodystart="147" bodyend="-1"/>
+        <referencedby refid="class_prado_helper_1a7c342414176459fbf1d4c20e6657172c" compoundref="_prado_helper_8cs" startline="147" endline="218">BuscarTituloYSigloDeObra</referencedby>
+        <referencedby refid="class_prado_helper_1a280f245dd7aa78f62b82023cce3a1289" compoundref="_prado_helper_8cs" startline="103" endline="140">ParsearRDFObras</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_prado_helper_1a6be3c130718e6cf97e1c6a4b6e2cef36" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int string string sigloMasPopular</type>
+        <definition>static int string string sigloMasPopular PradoHelper.ObtenerInfoPrado</definition>
+        <argsstring>(string animal)</argsstring>
+        <name>ObtenerInfoPrado</name>
+        <qualifiedname>PradoHelper.ObtenerInfoPrado</qualifiedname>
+        <param>
+          <type>string</type>
+          <declname>animal</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/usuario/source/repos/trasteo/trasteo/PradoHelper.cs" line="17" column="78" bodyfile="C:/Users/usuario/source/repos/trasteo/trasteo/PradoHelper.cs" bodystart="17" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="class_prado_helper_1a2db0117b1bcb916f436338e79c4fda77" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>static string PradoHelper.ObtenerRDFDelPrado</definition>
+        <argsstring>(string animal, int pagina)</argsstring>
+        <name>ObtenerRDFDelPrado</name>
+        <qualifiedname>PradoHelper.ObtenerRDFDelPrado</qualifiedname>
+        <param>
+          <type>string</type>
+          <declname>animal</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>pagina</declname>
+        </param>
+        <briefdescription>
+<para>Método para obtener el RDF del Prado para un animal específico. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>animal</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>El nombre del animal.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pagina</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>La página actual para paginar resultados.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>El contenido RDF de la respuesta.</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/usuario/source/repos/trasteo/trasteo/PradoHelper.cs" line="74" column="26" bodyfile="C:/Users/usuario/source/repos/trasteo/trasteo/PradoHelper.cs" bodystart="74" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="class_prado_helper_1a280f245dd7aa78f62b82023cce3a1289" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>List&lt; string &gt;</type>
+        <definition>static List&lt; string &gt; PradoHelper.ParsearRDFObras</definition>
+        <argsstring>(string rdfContent, out List&lt; int &gt; obrasSiglos)</argsstring>
+        <name>ParsearRDFObras</name>
+        <qualifiedname>PradoHelper.ParsearRDFObras</qualifiedname>
+        <param>
+          <type>string</type>
+          <declname>rdfContent</declname>
+        </param>
+        <param>
+          <type>out List&lt; int &gt;</type>
+          <declname>obrasSiglos</declname>
+        </param>
+        <briefdescription>
+<para>Parsear el RDF para extraer los nombres de las obras y sus siglos. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>rdfContent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>El contenido RDF.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>obrasSiglos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Lista de los siglos de las obras.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Una lista con los nombres de las obras.</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/usuario/source/repos/trasteo/trasteo/PradoHelper.cs" line="103" column="24" bodyfile="C:/Users/usuario/source/repos/trasteo/trasteo/PradoHelper.cs" bodystart="103" bodyend="140"/>
+        <references refid="class_prado_helper_1a7c342414176459fbf1d4c20e6657172c" compoundref="_prado_helper_8cs" startline="147" endline="218">BuscarTituloYSigloDeObra</references>
+        <references refid="class_prado_helper_1aa89eae7a102f15c0e3e507f41315cda6" compoundref="_prado_helper_8cs" startline="147">titulo</references>
+      </memberdef>
+      <memberdef kind="function" id="class_prado_helper_1a7c342414176459fbf1d4c20e6657172c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string int siglo</type>
+        <definition>static string int siglo PradoHelper.BuscarTituloYSigloDeObra</definition>
+        <argsstring>(string obraUrl)</argsstring>
+        <name>BuscarTituloYSigloDeObra</name>
+        <qualifiedname>PradoHelper.BuscarTituloYSigloDeObra</qualifiedname>
+        <param>
+          <type>string</type>
+          <declname>obraUrl</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/usuario/source/repos/trasteo/trasteo/PradoHelper.cs" line="147" column="43" bodyfile="C:/Users/usuario/source/repos/trasteo/trasteo/PradoHelper.cs" bodystart="147" bodyend="218"/>
+        <references refid="class_prado_helper_1aa89eae7a102f15c0e3e507f41315cda6" compoundref="_prado_helper_8cs" startline="147">titulo</references>
+        <referencedby refid="class_prado_helper_1a280f245dd7aa78f62b82023cce3a1289" compoundref="_prado_helper_8cs" startline="103" endline="140">ParsearRDFObras</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_prado_helper_1a1bfa84a6d2fc5700c817b9914b59a481" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>XmlNamespaceManager</type>
+        <definition>static XmlNamespaceManager PradoHelper.ObtenerNamespaceManager</definition>
+        <argsstring>(XmlDocument xmlDoc)</argsstring>
+        <name>ObtenerNamespaceManager</name>
+        <qualifiedname>PradoHelper.ObtenerNamespaceManager</qualifiedname>
+        <param>
+          <type>XmlDocument</type>
+          <declname>xmlDoc</declname>
+        </param>
+        <briefdescription>
+<para>Método para crear un XmlNamespaceManager basado en los espacios de nombres RDF utilizados. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xmlDoc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>El documento XML sobre el cual trabajar.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>El XmlNamespaceManager con los espacios de nombres.</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/usuario/source/repos/trasteo/trasteo/PradoHelper.cs" line="225" column="40" bodyfile="C:/Users/usuario/source/repos/trasteo/trasteo/PradoHelper.cs" bodystart="225" bodyend="232"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/usuario/source/repos/trasteo/trasteo/PradoHelper.cs" line="10" column="7" bodyfile="C:/Users/usuario/source/repos/trasteo/trasteo/PradoHelper.cs" bodystart="11" bodyend="233"/>
+    <listofallmembers>
+      <member refid="class_prado_helper_1a7c342414176459fbf1d4c20e6657172c" prot="public" virt="non-virtual"><scope>PradoHelper</scope><name>BuscarTituloYSigloDeObra</name></member>
+      <member refid="class_prado_helper_1a62de674a8533c4ff73e5003138bdff76" prot="public" virt="non-virtual"><scope>PradoHelper</scope><name>numeroObras</name></member>
+      <member refid="class_prado_helper_1a08b98e5efea1da3a5fe08154464705ac" prot="public" virt="non-virtual"><scope>PradoHelper</scope><name>obrasNombres</name></member>
+      <member refid="class_prado_helper_1a6be3c130718e6cf97e1c6a4b6e2cef36" prot="public" virt="non-virtual"><scope>PradoHelper</scope><name>ObtenerInfoPrado</name></member>
+      <member refid="class_prado_helper_1a1bfa84a6d2fc5700c817b9914b59a481" prot="private" virt="non-virtual"><scope>PradoHelper</scope><name>ObtenerNamespaceManager</name></member>
+      <member refid="class_prado_helper_1a2db0117b1bcb916f436338e79c4fda77" prot="public" virt="non-virtual"><scope>PradoHelper</scope><name>ObtenerRDFDelPrado</name></member>
+      <member refid="class_prado_helper_1a280f245dd7aa78f62b82023cce3a1289" prot="public" virt="non-virtual"><scope>PradoHelper</scope><name>ParsearRDFObras</name></member>
+      <member refid="class_prado_helper_1aa89eae7a102f15c0e3e507f41315cda6" prot="public" virt="non-virtual"><scope>PradoHelper</scope><name>titulo</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

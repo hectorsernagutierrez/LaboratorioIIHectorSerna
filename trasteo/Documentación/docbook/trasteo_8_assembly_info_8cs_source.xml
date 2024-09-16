@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_trasteo_8_assembly_info_8cs_source" xml:lang="en-US">
+<title>trasteo.AssemblyInfo.cs</title>
+<indexterm><primary>C:/Users/usuario/source/repos/trasteo/trasteo/obj/Debug/net6.0/trasteo.AssemblyInfo.cs</primary></indexterm>
+Go to the documentation of this file.<programlisting linenumbering="unnumbered"><anchor xml:id="_trasteo_8_assembly_info_8cs_source_1l00001"/>00001 <emphasis role="comment">//------------------------------------------------------------------------------</emphasis>
+<anchor xml:id="_trasteo_8_assembly_info_8cs_source_1l00002"/>00002 <emphasis role="comment">//&#32;&lt;auto-generated&gt;</emphasis>
+<anchor xml:id="_trasteo_8_assembly_info_8cs_source_1l00003"/>00003 <emphasis role="comment">//&#32;&#32;&#32;&#32;&#32;Este&#32;código&#32;fue&#32;generado&#32;por&#32;una&#32;herramienta.</emphasis>
+<anchor xml:id="_trasteo_8_assembly_info_8cs_source_1l00004"/>00004 <emphasis role="comment">//&#32;&#32;&#32;&#32;&#32;Versión&#32;de&#32;runtime:4.0.30319.42000</emphasis>
+<anchor xml:id="_trasteo_8_assembly_info_8cs_source_1l00005"/>00005 <emphasis role="comment">//</emphasis>
+<anchor xml:id="_trasteo_8_assembly_info_8cs_source_1l00006"/>00006 <emphasis role="comment">//&#32;&#32;&#32;&#32;&#32;Los&#32;cambios&#32;en&#32;este&#32;archivo&#32;podrían&#32;causar&#32;un&#32;comportamiento&#32;incorrecto&#32;y&#32;se&#32;perderán&#32;si</emphasis>
+<anchor xml:id="_trasteo_8_assembly_info_8cs_source_1l00007"/>00007 <emphasis role="comment">//&#32;&#32;&#32;&#32;&#32;se&#32;vuelve&#32;a&#32;generar&#32;el&#32;código.</emphasis>
+<anchor xml:id="_trasteo_8_assembly_info_8cs_source_1l00008"/>00008 <emphasis role="comment">//&#32;&lt;/auto-generated&gt;</emphasis>
+<anchor xml:id="_trasteo_8_assembly_info_8cs_source_1l00009"/>00009 <emphasis role="comment">//------------------------------------------------------------------------------</emphasis>
+<anchor xml:id="_trasteo_8_assembly_info_8cs_source_1l00010"/>00010 
+<anchor xml:id="_trasteo_8_assembly_info_8cs_source_1l00011"/>00011 <emphasis role="keyword">using&#32;</emphasis>System;
+<anchor xml:id="_trasteo_8_assembly_info_8cs_source_1l00012"/>00012 <emphasis role="keyword">using&#32;</emphasis>System.Reflection;
+<anchor xml:id="_trasteo_8_assembly_info_8cs_source_1l00013"/>00013 
+<anchor xml:id="_trasteo_8_assembly_info_8cs_source_1l00014"/>00014 [assembly:&#32;System.Reflection.AssemblyCompanyAttribute(<emphasis role="stringliteral">&quot;trasteo&quot;</emphasis>)]
+<anchor xml:id="_trasteo_8_assembly_info_8cs_source_1l00015"/>00015 [assembly:&#32;System.Reflection.AssemblyConfigurationAttribute(<emphasis role="stringliteral">&quot;Debug&quot;</emphasis>)]
+<anchor xml:id="_trasteo_8_assembly_info_8cs_source_1l00016"/>00016 [assembly:&#32;System.Reflection.AssemblyFileVersionAttribute(<emphasis role="stringliteral">&quot;1.0.0.0&quot;</emphasis>)]
+<anchor xml:id="_trasteo_8_assembly_info_8cs_source_1l00017"/>00017 [assembly:&#32;System.Reflection.AssemblyInformationalVersionAttribute(<emphasis role="stringliteral">&quot;1.0.0+1361b163ecfba157c27cce05914682612ac7c03f&quot;</emphasis>)]
+<anchor xml:id="_trasteo_8_assembly_info_8cs_source_1l00018"/>00018 [assembly:&#32;System.Reflection.AssemblyProductAttribute(<emphasis role="stringliteral">&quot;trasteo&quot;</emphasis>)]
+<anchor xml:id="_trasteo_8_assembly_info_8cs_source_1l00019"/>00019 [assembly:&#32;System.Reflection.AssemblyTitleAttribute(<emphasis role="stringliteral">&quot;trasteo&quot;</emphasis>)]
+<anchor xml:id="_trasteo_8_assembly_info_8cs_source_1l00020"/>00020 [assembly:&#32;System.Reflection.AssemblyVersionAttribute(<emphasis role="stringliteral">&quot;1.0.0.0&quot;</emphasis>)]
+<anchor xml:id="_trasteo_8_assembly_info_8cs_source_1l00021"/>00021 
+<anchor xml:id="_trasteo_8_assembly_info_8cs_source_1l00022"/>00022 <emphasis role="comment">//&#32;Generado&#32;por&#32;la&#32;clase&#32;WriteCodeFragment&#32;de&#32;MSBuild.</emphasis>
+<anchor xml:id="_trasteo_8_assembly_info_8cs_source_1l00023"/>00023 
+</programlisting></section>

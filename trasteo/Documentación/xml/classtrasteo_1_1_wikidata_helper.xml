@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="classtrasteo_1_1_wikidata_helper" kind="class" language="C#" prot="public">
+    <compoundname>trasteo::WikidataHelper</compoundname>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="classtrasteo_1_1_wikidata_helper_1a48ba28d60907bd481818a8db1874d796" prot="private" static="yes" mutable="no">
+        <type>readonly RestClient</type>
+        <definition>readonly RestClient trasteo.WikidataHelper.client</definition>
+        <argsstring></argsstring>
+        <name>client</name>
+        <qualifiedname>trasteo.WikidataHelper.client</qualifiedname>
+        <initializer>= new RestClient(new RestClientOptions(&quot;https://query.wikidata.org&quot;) { MaxTimeout = -1 })</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/usuario/source/repos/trasteo/trasteo/WikiDataHelper.cs" line="16" column="40" bodyfile="C:/Users/usuario/source/repos/trasteo/trasteo/WikiDataHelper.cs" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classtrasteo_1_1_wikidata_helper_1a8445ffcb1338c1411600d27fed52c793" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string trasteo.WikidataHelper.familia</definition>
+        <argsstring></argsstring>
+        <name>familia</name>
+        <qualifiedname>trasteo.WikidataHelper.familia</qualifiedname>
+        <briefdescription>
+<para>Obtiene la familia y las propiedades de un animal desde Wikidata basado en su identificador quye empieaz cn Q. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>wikidataUrl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>La URL de la entidad en Wikidata.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Una tupla con el nombre de la familia y las propiedades concatenadas.</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/usuario/source/repos/trasteo/trasteo/WikiDataHelper.cs" line="24" column="26" bodyfile="C:/Users/usuario/source/repos/trasteo/trasteo/WikiDataHelper.cs" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classtrasteo_1_1_wikidata_helper_1a09297f6b8f2b9dc4ccbd3e3caca76736" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string string familiaDescr</type>
+        <definition>static string string familiaDescr trasteo.WikidataHelper.ObtenerFamiliaYPropiedades</definition>
+        <argsstring>(string wikidataUrl)</argsstring>
+        <name>ObtenerFamiliaYPropiedades</name>
+        <qualifiedname>trasteo.WikidataHelper.ObtenerFamiliaYPropiedades</qualifiedname>
+        <param>
+          <type>string</type>
+          <declname>wikidataUrl</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/usuario/source/repos/trasteo/trasteo/WikiDataHelper.cs" line="24" column="54" bodyfile="C:/Users/usuario/source/repos/trasteo/trasteo/WikiDataHelper.cs" bodystart="24" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="classtrasteo_1_1_wikidata_helper_1a40d93caab49ef93721e60e7cbf090185" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>static string trasteo.WikidataHelper.ObtenerNombreCientifico</definition>
+        <argsstring>(string wikidataUrl)</argsstring>
+        <name>ObtenerNombreCientifico</name>
+        <qualifiedname>trasteo.WikidataHelper.ObtenerNombreCientifico</qualifiedname>
+        <param>
+          <type>string</type>
+          <declname>wikidataUrl</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Obtiene el nombre científico de un animal desde Wikidata basado en su identificador Q.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>wikidataUrl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>La URL de la entidad en Wikidata.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>El nombre científico del animal, o una cadena vacía si no se encuentra.</para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/usuario/source/repos/trasteo/trasteo/WikiDataHelper.cs" line="96" column="26" bodyfile="C:/Users/usuario/source/repos/trasteo/trasteo/WikiDataHelper.cs" bodystart="96" bodyend="139"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/usuario/source/repos/trasteo/trasteo/WikiDataHelper.cs" line="14" column="7" bodyfile="C:/Users/usuario/source/repos/trasteo/trasteo/WikiDataHelper.cs" bodystart="15" bodyend="140"/>
+    <listofallmembers>
+      <member refid="classtrasteo_1_1_wikidata_helper_1a48ba28d60907bd481818a8db1874d796" prot="private" virt="non-virtual"><scope>trasteo::WikidataHelper</scope><name>client</name></member>
+      <member refid="classtrasteo_1_1_wikidata_helper_1a8445ffcb1338c1411600d27fed52c793" prot="public" virt="non-virtual"><scope>trasteo::WikidataHelper</scope><name>familia</name></member>
+      <member refid="classtrasteo_1_1_wikidata_helper_1a09297f6b8f2b9dc4ccbd3e3caca76736" prot="public" virt="non-virtual"><scope>trasteo::WikidataHelper</scope><name>ObtenerFamiliaYPropiedades</name></member>
+      <member refid="classtrasteo_1_1_wikidata_helper_1a40d93caab49ef93721e60e7cbf090185" prot="public" virt="non-virtual"><scope>trasteo::WikidataHelper</scope><name>ObtenerNombreCientifico</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

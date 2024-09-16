@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_registro_animal_map" xml:lang="en-US">
+<title>RegistroAnimalMap Class Reference</title>
+<indexterm><primary>RegistroAnimalMap</primary></indexterm>
+Inheritance diagram for RegistroAnimalMap:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_registro_animal_map__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for RegistroAnimalMap:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_registro_animal_map__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_class_registro_animal_map_1a0f6a4ef74746adc95838490f8a4091c6">RegistroAnimalMap</link> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line <link linkend="__program_8cs_source_1l00040">40</link> of file <link linkend="__program_8cs_source">Program.cs</link>.</para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_class_registro_animal_map_1a0f6a4ef74746adc95838490f8a4091c6"/><section>
+    <title>RegistroAnimalMap()</title>
+<indexterm><primary>RegistroAnimalMap</primary><secondary>RegistroAnimalMap</secondary></indexterm>
+<indexterm><primary>RegistroAnimalMap</primary><secondary>RegistroAnimalMap</secondary></indexterm>
+<para><computeroutput>RegistroAnimalMap.RegistroAnimalMap ( )</computeroutput></para><para>
+Definition at line <link linkend="__program_8cs_source_1l00042">42</link> of file <link linkend="__program_8cs_source">Program.cs</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+C:/Users/usuario/source/repos/trasteo/trasteo/<link linkend="__program_8cs">Program.cs</link></section>
+</section>

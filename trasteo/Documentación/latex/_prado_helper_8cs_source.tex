@@ -1,0 +1,211 @@
+\doxysection{C\+:/\+Users/usuario/source/repos/trasteo/trasteo/\+Prado\+Helper.cs}
+\hypertarget{_prado_helper_8cs_source}{}\label{_prado_helper_8cs_source}\mbox{\hyperlink{_prado_helper_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00002}00002\ \textcolor{keyword}{using\ }RestSharp;}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00003}00003\ \textcolor{keyword}{using\ }System;}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00004}00004\ \textcolor{keyword}{using\ }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00005}00005\ \textcolor{keyword}{using\ }System.IO;}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00006}00006\ \textcolor{keyword}{using\ }System.Text;}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00007}00007\ \textcolor{keyword}{using\ }System.Text.RegularExpressions;}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00008}00008\ \textcolor{keyword}{using\ }System.Xml;}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00010}\mbox{\hyperlink{class_prado_helper}{00010}}\ \textcolor{keyword}{public}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_prado_helper}{PradoHelper}}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00011}00011\ \{}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00017}\mbox{\hyperlink{class_prado_helper_a62de674a8533c4ff73e5003138bdff76}{00017}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ (\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_prado_helper_a62de674a8533c4ff73e5003138bdff76}{numeroObras}},\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_prado_helper_a08b98e5efea1da3a5fe08154464705ac}{obrasNombres}},\ \textcolor{keywordtype}{string}\ sigloMasPopular)\ \mbox{\hyperlink{class_prado_helper_a6be3c130718e6cf97e1c6a4b6e2cef36}{ObtenerInfoPrado}}(\textcolor{keywordtype}{string}\ animal)}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00018}00018\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00019}00019\ \ \ \ \ \ \ \ \ var\ \mbox{\hyperlink{class_prado_helper_a08b98e5efea1da3a5fe08154464705ac}{obrasNombres}}\ =\ \textcolor{keyword}{new}\ List<string>();}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00020}00020\ \ \ \ \ \ \ \ \ var\ siglosContador\ =\ \textcolor{keyword}{new}\ Dictionary<int,\ int>();\ \textcolor{comment}{//\ Contador\ de\ obras\ por\ siglo}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ pagina\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00022}00022\ \ \ \ \ \ \ \ \ var\ rdfResult\ =\ \mbox{\hyperlink{class_prado_helper_a2db0117b1bcb916f436338e79c4fda77}{ObtenerRDFDelPrado}}(animal.ToLower(),\ pagina).TrimStart();}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Crear\ un\ XmlDocument}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00025}00025\ \ \ \ \ \ \ \ \ var\ xmlDoc\ =\ \textcolor{keyword}{new}\ XmlDocument();}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00026}00026\ \ \ \ \ \ \ \ \ xmlDoc.LoadXml(rdfResult);}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00028}00028\ \ \ \ \ \ \ \ \ var\ siglos\ =\ \textcolor{keyword}{new}\ List<int>();}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Obtener\ el\ número\ de\ obras}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00031}00031\ \ \ \ \ \ \ \ \ var\ numeroObrasNodo\ =\ \textcolor{keywordtype}{int}.Parse(xmlDoc.SelectSingleNode(\textcolor{stringliteral}{"{}//gnoss:NumberOfResults"{}},\ ObtenerNamespaceManager(xmlDoc))?.InnerText);}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ numPags\ =\ (numeroObrasNodo\ /\ 18)+1\ ;}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (pagina\ =\ 1;\ pagina\ <\ numPags;\ pagina++)}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00036}00036\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Hacer\ la\ petición\ paginada\ al\ RDF\ del\ Prado}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ rdfResult\ =\ \mbox{\hyperlink{class_prado_helper_a2db0117b1bcb916f436338e79c4fda77}{ObtenerRDFDelPrado}}(animal,\ pagina);}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Parsear\ el\ resultado\ RDF}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ var\ obrasPagina\ =\ \mbox{\hyperlink{class_prado_helper_a280f245dd7aa78f62b82023cce3a1289}{ParsearRDFObras}}(rdfResult,\ out\ var\ obrasSiglos);}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ siglos.AddRange(obrasSiglos);}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_prado_helper_a08b98e5efea1da3a5fe08154464705ac}{obrasNombres}}.AddRange(obrasPagina);}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00045}00045\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Contar\ los\ siglos}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00048}00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (var\ siglo\ \textcolor{keywordflow}{in}\ siglos)}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00049}00049\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (siglosContador.ContainsKey(siglo))}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ siglosContador[siglo]++;}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ siglosContador[siglo]\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00058}00058\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Obtener\ el\ siglo\ con\ más\ obras}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00061}00061\ \ \ \ \ \ \ \ \ var\ sigloMasPopular\ =\ siglosContador.Count\ >\ 0}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ ?\ siglosContador.Aggregate((l,\ r)\ =>\ l.Value\ >\ r.Value\ ?\ l\ :\ r).Key.ToString()}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ :\ \textcolor{stringliteral}{"{}N/A"{}};}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (numeroObrasNodo,\ \textcolor{keywordtype}{string}.Join(\textcolor{stringliteral}{"{}|"{}},\ \mbox{\hyperlink{class_prado_helper_a08b98e5efea1da3a5fe08154464705ac}{obrasNombres}}),\ sigloMasPopular);}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00066}00066\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00074}\mbox{\hyperlink{class_prado_helper_a2db0117b1bcb916f436338e79c4fda77}{00074}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_prado_helper_a2db0117b1bcb916f436338e79c4fda77}{ObtenerRDFDelPrado}}(\textcolor{keywordtype}{string}\ animal,\ \textcolor{keywordtype}{int}\ pagina)}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00075}00075\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00076}00076\ \ \ \ \ \ \ \ \ var\ options\ =\ \textcolor{keyword}{new}\ RestClientOptions(\textcolor{stringliteral}{"{}https://www.museodelprado.es"{}})}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00077}00077\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ MaxTimeout\ =\ -\/1,}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00079}00079\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00080}00080\ \ \ \ \ \ \ \ \ var\ client\ =\ \textcolor{keyword}{new}\ RestClient(options);}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00081}00081\ \ \ \ \ \ \ \ \ var\ request\ =\ \textcolor{keyword}{new}\ RestRequest(\$\textcolor{stringliteral}{"{}/coleccion/obras-\/de-\/arte?searchObras=\{animal\}\&rdf=null\&pagina=\{pagina\}"{}},\ Method.Get);}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00082}00082\ \ \ \ \ \ \ \ \ request.AddHeader(\textcolor{stringliteral}{"{}Accept"{}},\ \textcolor{stringliteral}{"{}application/rdf+xml"{}});}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00084}00084\ \ \ \ \ \ \ \ \ var\ response\ =\ client.Execute(request);}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (response.IsSuccessful)}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00087}00087\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ response.Content;}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00089}00089\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00090}00090\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00091}00091\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00092}00092\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}Error\ al\ obtener\ RDF\ del\ Prado\ para\ \{animal\}:\ \{response.ErrorMessage\}"{}});}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00094}00094\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00095}00095\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00103}\mbox{\hyperlink{class_prado_helper_a280f245dd7aa78f62b82023cce3a1289}{00103}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ List<string>\ \mbox{\hyperlink{class_prado_helper_a280f245dd7aa78f62b82023cce3a1289}{ParsearRDFObras}}(\textcolor{keywordtype}{string}\ rdfContent,\ out\ List<int>\ obrasSiglos)}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00104}00104\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00105}00105\ \ \ \ \ \ \ \ \ var\ obras\ =\ \textcolor{keyword}{new}\ List<string>();}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00106}00106\ \ \ \ \ \ \ \ \ obrasSiglos\ =\ \textcolor{keyword}{new}\ List<int>();}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00108}00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{string}.IsNullOrEmpty(rdfContent))\ \textcolor{keywordflow}{return}\ obras;}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00110}00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00111}00111\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Crear\ un\ XmlDocument\ y\ cargar\ el\ contenido}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ var\ xmlDoc\ =\ \textcolor{keyword}{new}\ XmlDocument();}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ xmlDoc.LoadXml(rdfContent);}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Seleccionar\ los\ nodos\ 'Results'}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ var\ obrasNodos\ =\ xmlDoc.SelectNodes(\textcolor{stringliteral}{"{}//gnoss:Results"{}},\ ObtenerNamespaceManager(xmlDoc));}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{foreach}\ (XmlNode\ obra\ \textcolor{keywordflow}{in}\ obrasNodos)}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00121}00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ url\ =\ obra.Attributes[\textcolor{stringliteral}{"{}rdf:resource"{}}]?.InnerText;}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\textcolor{keywordtype}{string}.IsNullOrEmpty(url))}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00125}00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ (\mbox{\hyperlink{class_prado_helper_aa89eae7a102f15c0e3e507f41315cda6}{titulo}},\ siglo)\ =\ \mbox{\hyperlink{class_prado_helper_a7c342414176459fbf1d4c20e6657172c}{BuscarTituloYSigloDeObra}}(url);}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ patron\ =\ \textcolor{stringliteral}{@"{}obra-\/de-\/arte/([a-\/zA-\/Z0-\/9\(\backslash\)-\/]+)/"{}};}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00128}00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Match\ match\ =\ Regex.Match(url,\ patron);}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00129}00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ obras.Add(match.Groups[1].Value);\ \textcolor{comment}{//\ Agregar\ la\ URL\ del\ recurso\ como\ nombre\ de\ obra}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ obrasSiglos.Add(siglo);}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00133}00133\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00134}00134\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ ex)}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00135}00135\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}Error\ al\ parsear\ RDF:\ \{ex.Message\}"{}});}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00137}00137\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00139}00139\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ obras;}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00140}00140\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00141}00141\ }
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00147}\mbox{\hyperlink{class_prado_helper_a7c342414176459fbf1d4c20e6657172c}{00147}}\ \ \ \ \ \textcolor{keyword}{public}\ \textcolor{keyword}{static}\ (\textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_prado_helper_aa89eae7a102f15c0e3e507f41315cda6}{titulo}},\ \textcolor{keywordtype}{int}\ siglo)\ \mbox{\hyperlink{class_prado_helper_a7c342414176459fbf1d4c20e6657172c}{BuscarTituloYSigloDeObra}}(\textcolor{keywordtype}{string}\ obraUrl)}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00148}00148\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00149}00149\ \ \ \ \ \ \ \ \ var\ options\ =\ \textcolor{keyword}{new}\ RestClientOptions(\textcolor{stringliteral}{"{}https://www.museodelprado.es"{}})}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00150}00150\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ MaxTimeout\ =\ -\/1,}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00152}00152\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00153}00153\ \ \ \ \ \ \ \ \ var\ client\ =\ \textcolor{keyword}{new}\ RestClient(options);}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00154}00154\ \ \ \ \ \ \ \ \ var\ request\ =\ \textcolor{keyword}{new}\ RestRequest(\$\textcolor{stringliteral}{"{}\{obraUrl\}?rdf=null"{}},\ Method.Get);}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00155}00155\ \ \ \ \ \ \ \ \ request.AddHeader(\textcolor{stringliteral}{"{}Accept"{}},\ \textcolor{stringliteral}{"{}application/rdf+xml"{}});}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00157}00157\ \ \ \ \ \ \ \ \ var\ response\ =\ client.Execute(request);}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00159}00159\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!response.IsSuccessful)}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00160}00160\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00161}00161\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}Error\ al\ obtener\ RDF\ para\ la\ obra:\ \{response.ErrorMessage\}"{}});}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00162}00162\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keyword}{null},\ -\/1);}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00163}00163\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00164}00164\ }
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00165}00165\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00166}00166\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Crear\ un\ XmlDocument\ y\ cargar\ el\ contenido\ RDF}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \ \ var\ xmlDoc\ =\ \textcolor{keyword}{new}\ XmlDocument();}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ xmlDoc.LoadXml(response.Content);}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00170}00170\ }
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Obtener\ el\ título\ de\ la\ obra\ usando\ el\ nodo\ 'ecidoc:p102\_E35\_p3\_has\_title\_augmented'}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ var\ \mbox{\hyperlink{class_prado_helper_aa89eae7a102f15c0e3e507f41315cda6}{titulo}}\ =\ xmlDoc.SelectSingleNode(\textcolor{stringliteral}{"{}//ecidoc:p102\_E35\_p3\_has\_title\_augmented"{}},\ ObtenerNamespaceManager(xmlDoc))?.InnerText;}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{string}.IsNullOrEmpty(\mbox{\hyperlink{class_prado_helper_aa89eae7a102f15c0e3e507f41315cda6}{titulo}}))}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//Console.WriteLine("{}No\ se\ encontró\ un\ título\ para\ la\ obra."{});}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keyword}{null},\ 0);}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00178}00178\ }
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Obtener\ el\ primer\ 'textDate'\ y\ tratar\ de\ identificar\ si\ contiene\ un\ año\ o\ un\ siglo}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00180}00180\ \ \ \ \ \ \ \ \ \ \ \ \ var\ textDateNode\ =\ xmlDoc.SelectSingleNode(\textcolor{stringliteral}{"{}//ecidoc:p62\_E52\_p79\_has\_time-\/span\_beginning"{}},\ ObtenerNamespaceManager(xmlDoc))?.InnerText;}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ siglo\ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00182}00182\ }
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\textcolor{keywordtype}{string}.IsNullOrEmpty(textDateNode))}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Intentar\ extraer\ un\ año\ de\ 4\ dígitos\ o\ un\ siglo}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{int}.TryParse(textDateNode.Substring(0,\ 4),\ out\ \textcolor{keywordtype}{int}\ anio))}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ siglo\ =\ (anio\ /\ 100)\ +\ 1;\ \textcolor{comment}{//\ Convertir\ año\ a\ siglo}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00189}00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00190}00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (textDateNode.Contains(\textcolor{stringliteral}{"{}siglo"{}},\ StringComparison.OrdinalIgnoreCase))}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Extraer\ el\ número\ del\ siglo\ mencionado}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ var\ sigloMatch\ =\ System.Text.RegularExpressions.Regex.Match(textDateNode,\ \textcolor{stringliteral}{@"{}\(\backslash\)d+"{}});}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sigloMatch.Success)}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00195}00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00196}00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ siglo\ =\ \textcolor{keywordtype}{int}.Parse(sigloMatch.Value);}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00200}00200\ }
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Si\ no\ se\ encuentra\ fecha\ válida,\ devuelve\ -\/1}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (siglo\ ==\ -\/1)}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}No\ se\ pudo\ determinar\ el\ siglo."{}});}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00206}00206\ }
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00207}00207\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Mostrar\ la\ información\ obtenida}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Console.WriteLine(\$"{}Título\ de\ la\ obra:\ \{titulo\}"{});}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ Console.WriteLine(\$"{}Siglo\ de\ la\ obra:\ \{siglo\}"{});}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00210}00210\ }
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{class_prado_helper_aa89eae7a102f15c0e3e507f41315cda6}{titulo}},\ siglo);}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00212}00212\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00213}00213\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (Exception\ ex)}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00214}00214\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ Console.WriteLine(\$\textcolor{stringliteral}{"{}Error\ al\ parsear\ RDF:\ \{ex.Message\}"{}});}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keyword}{null},\ -\/1);}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00217}00217\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00218}00218\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00219}00219\ }
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00225}00225\ \ \ \ \ \textcolor{keyword}{private}\ \textcolor{keyword}{static}\ XmlNamespaceManager\ ObtenerNamespaceManager(XmlDocument\ xmlDoc)}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00226}00226\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00227}00227\ \ \ \ \ \ \ \ \ var\ nsmgr\ =\ \textcolor{keyword}{new}\ XmlNamespaceManager(xmlDoc.NameTable);}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00228}00228\ \ \ \ \ \ \ \ \ nsmgr.AddNamespace(\textcolor{stringliteral}{"{}gnoss"{}},\ \textcolor{stringliteral}{"{}http://gnoss.com/gnoss.owl\#"{}});}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00229}00229\ \ \ \ \ \ \ \ \ nsmgr.AddNamespace(\textcolor{stringliteral}{"{}rdf"{}},\ \textcolor{stringliteral}{"{}http://www.w3.org/1999/02/22-\/rdf-\/syntax-\/ns\#"{}});}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00230}00230\ \ \ \ \ \ \ \ \ nsmgr.AddNamespace(\textcolor{stringliteral}{"{}ecidoc"{}},\ \textcolor{stringliteral}{"{}http://museodelprado.es/ontologia/ecidoc.owl\#"{}});}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00231}00231\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ nsmgr;}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00232}00232\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_prado_helper_8cs_source_l00233}00233\ \}}
+
+\end{DoxyCode}

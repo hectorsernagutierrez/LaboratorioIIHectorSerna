@@ -1,0 +1,247 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_prado_helper" xml:lang="en-US">
+<title>PradoHelper Class Reference</title>
+<indexterm><primary>PradoHelper</primary></indexterm>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static int string string sigloMasPopular <link linkend="_class_prado_helper_1a6be3c130718e6cf97e1c6a4b6e2cef36">ObtenerInfoPrado</link> (string animal)</para>
+</listitem>
+            <listitem><para>static string <link linkend="_class_prado_helper_1a2db0117b1bcb916f436338e79c4fda77">ObtenerRDFDelPrado</link> (string animal, int pagina)</para>
+
+<para>Método para obtener el RDF del Prado para un animal específico. </para>
+</listitem>
+            <listitem><para>static List&lt; string &gt; <link linkend="_class_prado_helper_1a280f245dd7aa78f62b82023cce3a1289">ParsearRDFObras</link> (string rdfContent, out List&lt; int &gt; obrasSiglos)</para>
+
+<para>Parsear el RDF para extraer los nombres de las obras y sus siglos. </para>
+</listitem>
+            <listitem><para>static string int siglo <link linkend="_class_prado_helper_1a7c342414176459fbf1d4c20e6657172c">BuscarTituloYSigloDeObra</link> (string obraUrl)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para>static int <link linkend="_class_prado_helper_1a62de674a8533c4ff73e5003138bdff76">numeroObras</link></para>
+
+<para>Método auxiliar para obtener el número total de obras, sus nombres y el siglo más popular para un animal. </para>
+</listitem>
+            <listitem><para>static int string <link linkend="_class_prado_helper_1a08b98e5efea1da3a5fe08154464705ac">obrasNombres</link></para>
+</listitem>
+            <listitem><para>static string <link linkend="_class_prado_helper_1aa89eae7a102f15c0e3e507f41315cda6">titulo</link></para>
+
+<para>Método auxiliar para buscar el siglo de una obra basada en su URL. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+<para>
+Definition at line <link linkend="__prado_helper_8cs_source_1l00010">10</link> of file <link linkend="__prado_helper_8cs_source">PradoHelper.cs</link>.</para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_prado_helper_1a7c342414176459fbf1d4c20e6657172c"/><section>
+    <title>BuscarTituloYSigloDeObra()</title>
+<indexterm><primary>BuscarTituloYSigloDeObra</primary><secondary>PradoHelper</secondary></indexterm>
+<indexterm><primary>PradoHelper</primary><secondary>BuscarTituloYSigloDeObra</secondary></indexterm>
+<para><computeroutput>static string int siglo PradoHelper.BuscarTituloYSigloDeObra (string obraUrl)<computeroutput>[static]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__prado_helper_8cs_source_1l00147">147</link> of file <link linkend="__prado_helper_8cs_source">PradoHelper.cs</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_prado_helper_a7c342414176459fbf1d4c20e6657172c_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_prado_helper_1a6be3c130718e6cf97e1c6a4b6e2cef36"/><section>
+    <title>ObtenerInfoPrado()</title>
+<indexterm><primary>ObtenerInfoPrado</primary><secondary>PradoHelper</secondary></indexterm>
+<indexterm><primary>PradoHelper</primary><secondary>ObtenerInfoPrado</secondary></indexterm>
+<para><computeroutput>static int string string sigloMasPopular PradoHelper.ObtenerInfoPrado (string animal)<computeroutput>[static]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__prado_helper_8cs_source_1l00017">17</link> of file <link linkend="__prado_helper_8cs_source">PradoHelper.cs</link>.</para>
+</section>
+<anchor xml:id="_class_prado_helper_1a2db0117b1bcb916f436338e79c4fda77"/><section>
+    <title>ObtenerRDFDelPrado()</title>
+<indexterm><primary>ObtenerRDFDelPrado</primary><secondary>PradoHelper</secondary></indexterm>
+<indexterm><primary>PradoHelper</primary><secondary>ObtenerRDFDelPrado</secondary></indexterm>
+<para><computeroutput>static string PradoHelper.ObtenerRDFDelPrado (string animal, int pagina)<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Método para obtener el RDF del Prado para un animal específico. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>animal</entry><entry>
+<para>El nombre del animal.</para>
+</entry>
+                            </row>
+                            <row>
+<entry>pagina</entry><entry>
+<para>La página actual para paginar resultados.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>El contenido RDF de la respuesta.</para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__prado_helper_8cs_source_1l00074">74</link> of file <link linkend="__prado_helper_8cs_source">PradoHelper.cs</link>.</para>
+</section>
+<anchor xml:id="_class_prado_helper_1a280f245dd7aa78f62b82023cce3a1289"/><section>
+    <title>ParsearRDFObras()</title>
+<indexterm><primary>ParsearRDFObras</primary><secondary>PradoHelper</secondary></indexterm>
+<indexterm><primary>PradoHelper</primary><secondary>ParsearRDFObras</secondary></indexterm>
+<para><computeroutput>static List&lt; string &gt; PradoHelper.ParsearRDFObras (string rdfContent, out List&lt; int &gt; obrasSiglos)<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Parsear el RDF para extraer los nombres de las obras y sus siglos. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>rdfContent</entry><entry>
+<para>El contenido RDF.</para>
+</entry>
+                            </row>
+                            <row>
+<entry>obrasSiglos</entry><entry>
+<para>Lista de los siglos de las obras.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Una lista con los nombres de las obras.</para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__prado_helper_8cs_source_1l00103">103</link> of file <link linkend="__prado_helper_8cs_source">PradoHelper.cs</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_prado_helper_a280f245dd7aa78f62b82023cce3a1289_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+</section>
+<section>
+<title>Member Data Documentation</title>
+<anchor xml:id="_class_prado_helper_1a62de674a8533c4ff73e5003138bdff76"/><section>
+    <title>numeroObras</title>
+<indexterm><primary>numeroObras</primary><secondary>PradoHelper</secondary></indexterm>
+<indexterm><primary>PradoHelper</primary><secondary>numeroObras</secondary></indexterm>
+<para><computeroutput>int PradoHelper.numeroObras<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Método auxiliar para obtener el número total de obras, sus nombres y el siglo más popular para un animal. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>animal</entry><entry>
+<para>El nombre del animal.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>Una tupla con el número de obras, el nombre de todas las obras y el siglo más popular.</para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__prado_helper_8cs_source_1l00017">17</link> of file <link linkend="__prado_helper_8cs_source">PradoHelper.cs</link>.</para>
+</section>
+<anchor xml:id="_class_prado_helper_1a08b98e5efea1da3a5fe08154464705ac"/><section>
+    <title>obrasNombres</title>
+<indexterm><primary>obrasNombres</primary><secondary>PradoHelper</secondary></indexterm>
+<indexterm><primary>PradoHelper</primary><secondary>obrasNombres</secondary></indexterm>
+<para><computeroutput>int string PradoHelper.obrasNombres<computeroutput>[static]</computeroutput></computeroutput></para><para>
+Definition at line <link linkend="__prado_helper_8cs_source_1l00017">17</link> of file <link linkend="__prado_helper_8cs_source">PradoHelper.cs</link>.</para>
+</section>
+<anchor xml:id="_class_prado_helper_1aa89eae7a102f15c0e3e507f41315cda6"/><section>
+    <title>titulo</title>
+<indexterm><primary>titulo</primary><secondary>PradoHelper</secondary></indexterm>
+<indexterm><primary>PradoHelper</primary><secondary>titulo</secondary></indexterm>
+<para><computeroutput>string PradoHelper.titulo<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Método auxiliar para buscar el siglo de una obra basada en su URL. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>obraUrl</entry><entry>
+<para>URL de la obra.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>El siglo de la obra.</para>
+</formalpara>
+</para>
+<para>
+Definition at line <link linkend="__prado_helper_8cs_source_1l00147">147</link> of file <link linkend="__prado_helper_8cs_source">PradoHelper.cs</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+C:/Users/usuario/source/repos/trasteo/trasteo/<link linkend="__prado_helper_8cs">PradoHelper.cs</link></section>
+</section>
